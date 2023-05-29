@@ -1,0 +1,902 @@
+/*-------------New Page -  Bentota-------------*/
+
+
+	
+	
+	*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.sub-header-ben {
+    height: 560px;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(images/ben1.jpg);
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: white;
+	
+}
+
+    .sub-header-ben h1 {
+        margin-top: 160px; /*---Title space from top---*/
+        font-size: 45px;
+		margin-left:10px;
+		margin-right:10px;
+        color: lightgray;
+    }
+
+
+
+
+@media only screen and (max-width: 768px) {
+  .sub-header-ben h1 {
+    margin-top: 100px; 
+    font-size: 35px; 
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .sub-header-ben h1 {
+    margin-top: 90px; 
+    font-size: 25px; 
+	
+  }
+}
+
+
+
+nav{
+    display: flex;
+    padding:2%;
+    justify-content:space-between; /* Distribute the space between items evenly */
+    align-items:center;
+	
+}
+
+nav img{
+    /*logo*/
+    width: 50px;
+
+}
+
+.nav-links{
+    flex:1; /* Allow the navigation links to take up remaining space within the flex container */
+    text-align:right;
+
+}
+
+.nav-links ul li{
+    list-style : none;
+    display: inline-block; /* Display the list items horizontally */
+    padding: 8px 12px;
+    position :relative;
+}
+
+    .nav-links ul li a 
+    {
+        /*  nav link colors and font*/
+        font-size: 14px;
+        color: #D3D3D3;
+        /*to remove the line under the nav links*/
+        text-decoration: none;
+    }
+
+    .nav-links ul li::after 
+    {
+        /*the line underneath the nav links*/
+        content: '';
+        width: 0%;
+        height: 2px;
+        background: #ADD8E6;
+        margin: auto;
+        display: block; /* Display the line as a block element */
+        transition: 0.5s;  /* Apply transition effect with a duration of 0.5 seconds */
+    }
+ .nav-links ul li:hover::after{
+     /*hover effect under the nav links*/
+     width:100%;
+ }
+.sub-menu {
+    display: none; /* Initially hide the sub-menu */
+    position: absolute;  /* Position the sub-menu absolutely */
+    top: 100%;
+    left: 0;
+}
+
+.sub-menu {
+    display: none; /*To hide the sub menu*/
+}
+
+.nav-links ul li:hover .sub-menu {
+    display: block; /* Display the sub-menu on hover */
+    position: absolute;  /* Position the sub-menu absolutely */
+    margin-left: -15px;
+}
+     
+
+        
+/*nav-responsive*/
+
+#menu-bar{
+	display:none; /* Initially hide the menu bar */
+}
+
+
+.sub-header-ben label{
+	font-size:20px;
+	color:white;
+	cursor:pointer;
+	display:none; /* Initially hide the label*/
+}
+
+.nav-links ul li ul{
+	  
+	position: absolute;
+	left:-20px;
+	right:0;
+	top: 40px;
+	width: 200px;
+	display:none;
+	
+}
+
+.nav-links ul li:hover > ul{
+display: initial; /* Display the sub-menu when the parent list item is hovered */
+}
+
+
+@media only screen and (max-width: 1200px)
+{
+	
+	.sub-header-ben{
+	
+	}
+	.sub-header-ben label{
+		display:initial; /* Display the sub-menu when the parent list item is hovered */
+	}
+	.nav-links{
+	position:absolute;
+	top:15%; left:0; right:0;
+	background-color:#040720;
+	/*
+	backdrop-filter:blur(10px);
+	border-top:1px solid rgba(0,0,0,.1); */
+	display:none;
+	
+	}
+	
+	.nav-links ul li{
+	width:100%;
+	left:0;
+	text-align:center;
+	
+    }
+	
+	.nav-links ul li ul li{
+	backdrop-filter:blur(4px);
+	
+    }
+	
+	
+	#menu-bar:checked ~ .nav-links{
+		display:initial;
+	}
+	.sub-header-ben .nav-links ul li ul{
+	position:relative;
+	width:100%;
+	margin-bottom:2%;
+}
+.nav-links ul li ul{
+	  
+	position: absolute;
+	left:0px;
+	right:0;
+	top: 0;
+	width: 200px;
+	display:none;
+	
+}  
+
+
+	
+}
+
+
+
+
+
+
+
+/*hr style*/
+.hr-text {
+    font-size: 25px;
+    position: relative;
+    top: -0.7em;
+    padding: 0 10px;
+    background-color: #fff;
+    color: #202020;
+    font-weight: 600;
+    font-style: italic;
+}
+
+
+
+    /*-----------Intro para styles-----*/
+.intro {
+    width: 60%;
+    margin: 40px auto 90px auto;
+    text-align: center;
+    padding-top: 80px;
+}
+
+
+    .intro p {
+        color: black;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 22px;
+        padding: 10px;
+    }
+
+	@media only screen and (max-width: 1200px){
+	.intro {
+		width:80%;
+	}
+}
+/*------Slide show----------*/
+
+
+.slider {
+  width: 700px;
+  height: 450px;
+  background-color: dimgrey;
+  margin: 0 auto;
+  margin-top: 20px;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  transform-style: preserve-3d; /* Enables 3D transformations */
+  perspective: 1000px; /* Sets the perspective for 3D transforms */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); /*  box shadow for a 3D effect */
+ 
+}
+
+
+
+.image-container-slide {
+    width: 5600px; /* 8 images x 700px */
+    background-color: grey;
+    height: 450px;
+    clear: both; /* Clear any floats */
+    position: absolute;
+    left: 0;
+    top: 0;
+    -webkit-transition: left 2s; /* Apply a transition effect for the left property with a duration of 2 seconds (for WebKit browsers) */
+    -moz-transition: left 2s; /* Apply a transition effect for the left property with a duration of 2 seconds (for Mozilla Firefox) */
+    -o-transition: left 2s; /* Apply a transition effect for the left property with a duration of 2 seconds (for Opera browser) */
+    transition: left 2s; /* Apply a transition effect for the left property with a duration of 2 seconds */
+	
+}
+
+.slide {
+    float: left;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    width: 700px;
+    height: 450px;
+}
+
+.buttons-slide {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);  /* Move the container horizontally by 50% of its own width towards the left */
+}
+
+    .buttons-slide a {
+        display: inline-block; /* Display the anchor elements as inline-block */
+        height: 15px;
+        width: 15px;
+        border-radius: 50px;
+         border: 3px solid #ECF4FA;
+        background-color: darkslategrey;
+        margin: 0 5px;
+        transition: background-color 0.3s ease-in-out; /* transition  */
+    }
+
+        .buttons-slide a:target {
+            background-color: grey;
+        }
+        .buttons-slide a:hover {
+            background-color: dimgrey; /* Change background color on hover */
+        }
+
+#slide-1:target ~ .image-container-slide {
+    left: 0px;
+}
+
+#slide-2:target ~ .image-container-slide {
+    left: -700px;
+}
+
+#slide-3:target ~ .image-container-slide {
+    left: -1400px;
+}
+
+#slide-4:target ~ .image-container-slide {
+    left: -2100px;
+}
+
+#slide-5:target ~ .image-container-slide {
+    left: -2800px;
+}
+
+#slide-6:target ~ .image-container-slide {
+    left: -3500px;
+}
+
+#slide-7:target ~ .image-container-slide {
+    left: -4200px;
+}
+
+#slide-8:target ~ .image-container-slide {
+    left: -4900px;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+
+    .slider {
+        width: 300px;
+        height: 200px;
+    }
+
+    .image-container-slide {
+        width: 2400px; /* 8 images x 300px */
+        height: 200px;
+    }
+
+    .slide {
+        width: 300px;
+        height: 200px;
+    }
+
+    #slide-1:target ~ .image-container-slide {
+        left: 0px;
+    }
+
+    #slide-2:target ~ .image-container-slide {
+        left: -300px;
+    }
+
+    #slide-3:target ~ .image-container-slide {
+        left: -600px;
+    }
+
+    #slide-4:target ~ .image-container-slide {
+        left: -900px;
+    }
+
+    #slide-5:target ~ .image-container-slide {
+        left: -1200px;
+    }
+
+    #slide-6:target ~ .image-container-slide {
+        left: -1500px;
+    }
+
+    #slide-7:target ~ .image-container-slide {
+        left: -1800px;
+    }
+
+    #slide-8:target ~ .image-container-slide {
+        left: -2100px;
+    }
+}
+
+
+
+/*---look into--*/
+
+
+.bentota-look-into {
+  width: 70%;
+  margin: auto;
+  text-align: center;
+  padding-top: 100px;
+  align-items: center;
+    background-color: #ADD8E6;
+    padding: 50px;
+    width: 70%;
+    margin: 120px auto;
+	color: #191970;
+}
+
+.bentota-look-row {
+  display: flex;
+  flex-wrap: wrap;/*wrap onto multiple lines*/
+  justify-content: center;
+  gap: 30px;
+  margin:30px auto;
+}
+
+.bentota-look-card {
+  flex-basis: calc(50% - 20px); /*initial width is 50% of the available space and subtract 20px to get the gap in the outer corners */
+  background-color: #ECF4FA;
+  
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /*3D shadow*/
+  padding: 20px;
+  margin:10px auto 20px auto;
+  
+}
+
+.bentota-look-into h1 {
+  margin-top: 10px;
+  font-size: 25px;
+}
+
+.bentota-look-info h2 {
+  margin-top: 0;
+  font-size: 19px;
+  font-weight: bold;
+  color: #191970;
+}
+
+.bentota-look-info p {
+  margin: 20px;
+  font-size: 13px;
+  text-align:justify;
+}
+
+.bentota-look-image {
+  margin: 20px;
+  
+}
+
+.bentota-look-image img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+@media only screen and (max-width: 768px) {
+    .bentota-look-into {
+		margin-top:50px;
+        width:80%;
+        padding: 20px;
+    }
+
+    .bentota-look-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bentota-look-card {
+        flex-basis: 90%;
+        margin-bottom: 30px;
+    }
+
+    .bentota-look-image {
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .bentota-look-into {
+		margin-top:50px;
+        width:80%;
+        padding: 20px;
+    }
+
+    .bentota-look-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bentota-look-card {
+        flex-basis: 95%;
+        margin-bottom: 20px;
+    }
+
+    .bentota-look-info h2 {
+        font-size: 16px;
+    }
+
+    .bentota-look-info p {
+        font-size: 12px;
+        margin: 10px;
+    }
+}
+
+
+
+
+
+/*--Things to do in bentota--*/
+
+.todo-ben {
+  width: 70%;
+  margin: auto;
+  text-align: center;
+  padding-top: 20px;
+  align-items: center;
+  background-color: #ADD8E6;
+  padding: 0;
+  width: 70%;
+  margin: 10px auto;
+  color: #191970;
+}
+
+.todo-ben h2 {
+  margin-top: 20px;
+  font-size: 29px;
+}
+
+.hikk-col {
+  display: flex;
+  border-radius: 10px;
+  margin-bottom: 5%;
+}
+
+
+
+.hikk-col-text {
+  width: 80%;
+  padding: 15px;
+  background-color: #ECF4FA;
+}
+
+.row-ben {
+  display: flex;
+  justify-content: space-between; /* Distribute the items evenly with space between them */
+  margin:10px 30px 10px 30px;
+}
+
+.hikk-col {
+  flex-basis:20%; /* Set the initial flex basis of the columns to 20% */
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  transition: transform 0.3s; /* Apply a transition effect to the transform property with a duration of 0.3 seconds */
+ 
+}
+
+.hikk-col:hover {
+  transform: scale(1.05); /*zoom*/
+}
+
+.hikk-col img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.hikk-col-text h3 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 18px;
+  text-align:justify;
+}
+
+.hikk-col-text p {
+  margin: 10px 0 0;
+  font-size: 13px;
+  text-align:justify;
+}
+
+.hikk-col-text h2 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 18px;
+  text-align:justify;
+  
+}
+
+
+@media only screen and (max-width: 768px) {
+    .todo-ben {
+		width:80%;
+        padding-top: 10px;
+        margin: 5px auto;
+    }
+
+    .row-ben {
+        flex-direction: column;
+        margin: 10px 0;
+    }
+
+    .hikk-col {
+        flex-basis: 100%;
+        margin: 10px 0;
+    }
+
+    .hikk-col-text {
+        width: 100%;
+    }
+	.bentota-whole-col
+	{
+		margin-left:10px;
+		margin-right:10px
+	}
+}
+
+@media only screen and (max-width: 480px) {
+    .todo-ben {
+		width:80%;
+        padding-top: 10px;
+        margin: 5px auto;
+    }
+
+    .row-ben {
+        flex-direction: column;
+        margin: 10px 0;
+    }
+
+    .hikk-col {
+        flex-basis: 100%;
+        margin: 10px 0;
+    }
+
+    .hikk-col-text h3 {
+        font-size: 16px;
+    }
+
+    .hikk-col-text p {
+        font-size: 12px;
+    }
+	.bentota-whole-col
+	{
+		margin-left:10px;
+		margin-right:10px
+	}
+}
+
+
+
+
+
+/*----map----*/
+
+
+.map-ben {
+    width: 100%;
+    height:80vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+	margin-top:-60px;
+}
+.map-ben iframe{
+    width:70%;
+    height:500px;
+    
+}
+
+
+
+@media only screen and (max-width: 768px) {
+    .map-ben {
+        margin-top: -50px;
+    }
+
+        .map-ben iframe {
+            width: 85%;
+            height: 500px;
+        }
+}
+
+@media only screen and (max-width: 480px) {
+    .map-ben {
+        margin-top: -30px;
+    }
+
+        .map-ben iframe {
+            width: 85%;
+            height: 500px;
+        }
+}
+
+
+
+/*fixed background*/
+
+.bentota-fixed-background {
+	background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.2)),url(images/ben1.jpg);
+	background-attachment:fixed;
+	background-size:cover;
+	padding-bottom:110px;
+	padding-top:20px;
+	
+}
+
+@media only screen and (max-width: 480px){
+	.bentota-fixed-background{
+	padding-bottom:40px;
+	padding-top:10px;
+	}
+	
+}
+
+.slider-main {
+	padding-bottom:90px;
+}
+
+
+
+
+
+
+
+/*----footer-----*/
+
+
+
+
+.footer{
+	background-color: #24262b;
+    padding: 70px 0 0 0;
+	margin-top:100px;
+	
+	
+}
+.container-footer{
+	max-width: 1170px;
+	margin:auto;
+	margin-bottom:25px;
+}
+.row-footer{
+	display: flex;
+	flex-wrap: wrap; /*when the flex items reach the edge of the container, they will continue on the next line*/
+}
+.row-footer ul{
+	list-style: none;
+}
+
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+   margin-bottom: 20px; /*  to separate each column */
+   border: 1px solid transparent; /* transparent border to prevent margin collapsing */
+}
+.footer-col h4{
+	font-size: 18px;
+	color: #ffffff;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative; /*to adjust the position of the element relative to its normal position*/
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute; /*positions an element relative to its nearest positioned class*/
+	left:0;
+	bottom: -10px;
+	background-color: #1E90FF;/*color of the line under the h4*/
+	height: 2px;
+	box-sizing: border-box;
+	width: 70px; /*line under the h4*/
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}
+
+/*email- input*/
+
+.footer-form input
+{
+	width:230px;
+	height:35px;
+	border-radius:4px;
+	text-align:center;
+	margin-top:8px;
+	margin-bottom:20px;
+	outline:none;
+	border:none;
+}
+
+/*submit*/ 
+.footer-form button{
+	background:transparent;
+	border:2px solid #fff;
+	color:#fff;
+	border-radius: 30px;
+	padding:7px 30px;
+	font-size:15px;
+	cursor:pointer;
+	
+}
+
+
+
+
+/*donate-button-footer*/
+
+.donate-button {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  border: 2px solid transparent; /* transparent border */
+  padding: 10px 34px;
+  font-size: 20px;
+  font-weight: 500;
+  background: #4682B4;
+  position: relative;
+  cursor: pointer;
+  margin: 10px auto 30px auto;
+  transition: 0.3s; /*  transition for smooth effect */
+}
+
+.donate-button:hover {
+  border: 2px solid  #ADD8E6;/*  border color on hover */
+  background: #ADD8E6;
+}
+
+
+.copyrights{
+	background:#181818;
+	width:100%;
+	padding:20px 0;
+	text-align:center;
+}
+
+.copyrights p{
+	font-size:14px;
+	word-spacing: 2px;
+	text-transform:capitalize;
+	color:	#C0C0C0;
+}
+
+.copyrights span{
+	text-transform:uppercase;
+	opacity: .4;
+	font-weight:200;
+}
+
+
+
+/*responsive-footer*/
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+}
+}

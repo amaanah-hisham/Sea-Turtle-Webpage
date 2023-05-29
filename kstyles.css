@@ -1,0 +1,819 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.sub-header-kos {
+    height: 450px;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(images/kosgoda.jpg);
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: white;
+}
+
+    .sub-header-kos h1 {
+        margin-top: 180px; /*---Title space from top---*/
+        font-size: 45px;
+        margin-left: 10px;
+        margin-right: 10px;
+        color: lightgray;
+    }
+
+
+
+
+@media only screen and (max-width: 768px) {
+    .sub-header-kos h1 {
+        margin-top: 150px;
+        font-size: 35px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .sub-header-kos h1 {
+        margin-top: 150px;
+        font-size: 25px;
+    }
+}
+
+
+
+nav {
+    display: flex;
+    padding: 2%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    nav img {
+        /*logo*/
+        width: 50px;
+    }
+
+.nav-links {
+    flex: 1;
+    text-align: right;
+}
+
+    .nav-links ul li {
+        list-style: none;
+        display: inline-block;
+        padding: 8px 12px;
+        position: relative;
+    }
+
+        .nav-links ul li a {
+            /*  nav link colors and font*/
+            font-size: 14px;
+            color: #D3D3D3;
+            /*to remove the line under the nav links*/
+            text-decoration: none;
+        }
+
+        .nav-links ul li::after {
+            /*the line underneath the nav links*/
+            content: '';
+            width: 0%;
+            height: 2px;
+            background: #ADD8E6;
+            margin: auto;
+            display: block;
+            transition: 0.5s;
+        }
+
+        .nav-links ul li:hover::after {
+            /*hover effect under the nav links*/
+            width: 100%;
+        }
+
+.sub-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+
+.sub-menu {
+    display: none; /*To hide the sub menu*/
+}
+
+.nav-links ul li:hover .sub-menu {
+    display: block; /**/
+    position: absolute;
+    margin-left: -15px;
+}
+
+
+
+/*nav-responsive*/
+
+#menu-bar {
+    display: none;
+}
+
+
+.sub-header-kos label {
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+.nav-links ul li ul {
+    position: absolute;
+    left: -20px;
+    right: 0;
+    top: 40px;
+    width: 200px;
+    display: none;
+}
+
+.nav-links ul li:hover > ul {
+    display: initial;
+}
+
+
+@media only screen and (max-width: 1200px) {
+
+    .sub-header-kos {
+    }
+
+        .sub-header-kos label {
+            display: initial;
+        }
+
+    .nav-links {
+        position: absolute;
+        top: 15%;
+        left: 0;
+        right: 0;
+		background-color:#040720;
+        /*backdrop-filter: blur(10px);
+        border-top: 1px solid rgba(0,0,0,.1);*/
+        display: none;
+    }
+
+        .nav-links ul li {
+            width: 100%;
+            left: 0;
+			text-align:center;
+        }
+
+            .nav-links ul li ul li {
+                backdrop-filter: blur(4px);
+            }
+
+
+    #menu-bar:checked ~ .nav-links {
+        display: initial;
+    }
+
+    .sub-header-kos .nav-links ul li ul {
+        position: relative;
+        width: 100%;
+        margin-bottom: 2%;
+    }
+
+    .nav-links ul li ul {
+        position: absolute;
+        left: 0px;
+        right: 0;
+        top: 0;
+        width: 200px;
+        display: none;
+    }
+}
+
+
+
+
+
+hr {
+    border-top: 2px solid #191970;;
+    
+}
+
+/*hr style*/
+.hr-text {
+    font-size: 25px;
+    position: relative;
+    top: -0.7em;
+    padding: 0 10px;
+    background-color: #fff;
+    color:  #191970;
+    font-weight: 600;
+    
+}
+
+
+
+    /*-----------Intro para styles-----*/
+.intro {
+    width: 60%;
+    margin: 40px auto 90px auto;
+    text-align: center;
+    padding-top: 80px;
+}
+
+
+    .intro p {
+        color:  #191970;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 22px;
+        padding: 10px;
+    }
+
+	@media only screen and (max-width: 1200px){
+	.intro {
+		width:80%;
+	}
+}
+
+/*------Slide show----------*/
+
+
+.slider {
+  width: 700px;
+  height: 450px;
+  background-color: dimgrey;
+  margin: 0 auto;
+  margin-top: 20px;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  transform-style: preserve-3d; /* Enables 3D transformations */
+  perspective: 1000px; /* Sets the perspective for 3D transforms */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 1); /*  box shadow for a 3D effect */
+ 
+}
+
+
+
+.image-container-slide {
+    width: 5600px; /* 8 images x 700px */
+    background-color: grey;
+    height: 450px;
+    clear: both;
+    position: absolute;
+    left: 0;
+    top: 0;
+    -webkit-transition: left 2s; /* Apply a transition effect for the left property with a duration of 2 seconds (for WebKit browsers) */
+    -moz-transition: left 2s; /* Apply a transition effect for the left property with a duration of 2 seconds (for Mozilla Firefox) */
+    -o-transition: left 2s;  /* Apply a transition effect for the left property with a duration of 2 seconds (for Opera browser) */
+    transition: left 2s; /* Apply a transition effect for the left property with a duration of 2 seconds */
+	
+}
+
+.slide {
+    float: left;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    width: 700px;
+    height: 450px;
+}
+
+.buttons-slide {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%); /* Move the container horizontally by 50% of its own width towards the left */
+}
+
+    .buttons-slide a {
+        display: inline-block;
+        height: 15px;
+        width: 15px;
+        border-radius: 50px;
+         border: 3px solid darkslategrey;
+        background-color: #ECF4FA;
+        margin: 0 5px;
+        transition: background-color 0.3s ease-in-out; /* transition  */
+    }
+
+        .buttons-slide a:target {
+            background-color: dimgrey;
+        }
+        .buttons-slide a:hover {
+            background-color: grey; /* Change background color on hover */
+        }
+
+#slide-1:target ~ .image-container-slide {
+    left: 0px;
+}
+
+#slide-2:target ~ .image-container-slide {
+    left: -700px;
+}
+
+#slide-3:target ~ .image-container-slide {
+    left: -1400px;
+}
+
+#slide-4:target ~ .image-container-slide {
+    left: -2100px;
+}
+
+#slide-5:target ~ .image-container-slide {
+    left: -2800px;
+}
+
+#slide-6:target ~ .image-container-slide {
+    left: -3500px;
+}
+
+#slide-7:target ~ .image-container-slide {
+    left: -4200px;
+}
+
+#slide-8:target ~ .image-container-slide {
+    left: -4900px;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+
+    .slider {
+        width: 300px;
+        height: 200px;
+    }
+
+    .image-container-slide {
+        width: 2400px; /* 8 images x 300px */
+        height: 200px;
+    }
+
+    .slide {
+        width: 300px;
+        height: 200px;
+    }
+
+    #slide-1:target ~ .image-container-slide {
+        left: 0px;
+    }
+
+    #slide-2:target ~ .image-container-slide {
+        left: -300px;
+    }
+
+    #slide-3:target ~ .image-container-slide {
+        left: -600px;
+    }
+
+    #slide-4:target ~ .image-container-slide {
+        left: -900px;
+    }
+
+    #slide-5:target ~ .image-container-slide {
+        left: -1200px;
+    }
+
+    #slide-6:target ~ .image-container-slide {
+        left: -1500px;
+    }
+
+    #slide-7:target ~ .image-container-slide {
+        left: -1800px;
+    }
+
+    #slide-8:target ~ .image-container-slide {
+        left: -2100px;
+    }
+}
+
+
+
+
+
+
+/*kos-projects*/
+
+.kosgoda-projects-main {
+	margin:100px auto;
+	align-items:center;
+}
+
+.kosgoda-projects-main h1{
+	margin-top: 110px;
+  margin-bottom: 5px;
+  font-size: 35px;
+  color: #191970;
+  text-align:center;
+}
+
+.kos-projects {
+  display: flex;
+  background-color: #ECF4FA;
+  margin: 50px auto;
+  width: 70%;
+  justify-content: center;
+}
+
+.kos-pro-info {
+  flex: 5;/*space alocation*/
+  padding: 20px;
+  text-align:justify;
+}
+.kos-pro-info h2{
+	 margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 25px;
+  color: #191970;
+}
+
+.kos-pro-info p{
+	 margin-top: 30px;
+  
+  color: #191970;
+}
+
+.cat-image {
+  flex: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.cat-image img {
+  width: 100%;
+  height: auto;
+  
+}
+
+@media only screen and (max-width: 768px) {
+	.kosgoda-projects-main{
+		width:95%;
+	}
+    .kosgoda-projects-main h1 {
+		
+        margin-top: 80px;
+        font-size: 30px;
+    }
+
+    .kos-projects {
+		width:90%;
+        flex-direction: column;
+        
+        margin: 30px auto;
+    }
+
+    .kos-pro-info {
+        padding: 10px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .cat-image {
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+	.kosgoda-projects-main{
+		width:95%;
+	}
+    .kosgoda-projects-main h1 {
+        margin-top: 60px;
+        font-size: 25px;
+    }
+
+    .kos-projects {
+        width:90%;
+        margin: 20px auto;
+    }
+
+    .kos-pro-info h2 {
+        font-size: 20px;
+    }
+
+    .kos-pro-info p {
+        margin-top: 15px;
+        text-align:justify;
+    }
+
+    .cat-image {
+        margin: 0 auto;
+    }
+}
+
+
+
+
+
+
+ /*--Things to do in kosgoda--*/
+
+
+
+.todo-hikk {
+  width: 70%;
+  margin: auto;
+  text-align: center;
+  padding-top: 100px;
+  align-items: center;
+    background-color: #ECF4FA;
+    padding: 20px;
+    width: 70%;
+    margin: 60px auto;
+	color: #191970;
+}
+
+.todo-hikk h1 {
+  margin-top: 20px;
+  font-size: 35px;
+}
+
+.hikk-col {
+  flex-basis: 31%;/*elements will take 31% of the horizontal space*/
+  border-radius: 10px;
+  margin-bottom: 5%;
+  text-align: left;
+}
+
+.hikk-col img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.row-hikk {
+  display: flex;/* create a flex container*/
+  justify-content: space-between;
+  
+}
+
+.hikk-col {
+  flex-basis: 30%;/*elements will take 31% of the horizontal space*/
+  margin: 10px;
+  background-color: #ECF4FA;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  padding: 15px;
+  transition: transform 0.3s;/*effect time*/
+  max-width: 300px;
+}
+
+.hikk-col:hover {
+  transform: scale(1.05);/*zoom effect*/
+}
+
+.hikk-col img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.hikk-col h3 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 18px;
+  
+}
+
+.hikk-col p {
+  margin: 10px 0 0;
+  font-size: 14px;
+}
+
+.hikk-col h2 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 18px;
+  color: black;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .row-hikk {
+        flex-wrap: wrap;
+        justify-content: center; /* Center the columns */
+    }
+
+    .hikk-col {
+        flex-basis: 45%;
+        margin: 10px;
+    }
+}
+
+@media only screen and (max-width: 630px) {
+    .todo-hikk {
+        width: 95%;
+        padding-top: 30px;
+        align-items: center;
+        margin: auto;
+    }
+
+        .todo-hikk h2 {
+            font-size: 20px;
+        }
+
+    .hikk-col {
+        flex-basis: 90%; /* Reduce the width of columns */
+        margin: 10px 0;
+    }
+}
+
+
+
+
+
+/*----map----*/
+
+.map-kos {
+    width: 100%;
+    height:80vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+}
+.map-kos iframe{
+    width:70%;
+    height:500px;
+    
+}
+@media (max-width: 767px) {
+  .map-kos iframe {
+    width: 90%;
+    height: 500px;
+	
+	margin-top:0;
+	margin-bottom:-40px;;
+  }
+}
+
+
+
+/*----footer-----*/
+
+
+
+
+.footer{
+	background-color: #24262b;
+    padding: 70px 0 0 0;
+	margin-top:100px;
+	
+	
+}
+.container-footer{
+	max-width: 1170px;
+	margin:auto;
+	margin-bottom:25px;
+}
+.row-footer{
+	display: flex;
+	flex-wrap: wrap; /*when the flex items reach the edge of the container, they will continue on the next line*/
+}
+.row-footer ul{
+	list-style: none;
+}
+
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+   margin-bottom: 20px; /*  to separate each column */
+   border: 1px solid transparent; /* transparent border to prevent margin collapsing */
+}
+.footer-col h4{
+	font-size: 18px;
+	color: #ffffff;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative; /*to adjust the position of the element relative to its normal position*/
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute; /*positions an element relative to its nearest positioned class*/
+	left:0;
+	bottom: -10px;
+	background-color: #1E90FF;/*color of the line under the h4*/
+	height: 2px;
+	box-sizing: border-box;
+	width: 70px; /*line under the h4*/
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}
+
+/*email- input*/
+
+.footer-form input
+{
+	width:230px;
+	height:35px;
+	border-radius:4px;
+	text-align:center;
+	margin-top:8px;
+	margin-bottom:20px;
+	outline:none;
+	border:none;
+}
+
+/*submit*/ 
+.footer-form button{
+	background:transparent;
+	border:2px solid #fff;
+	color:#fff;
+	border-radius: 30px;
+	padding:7px 30px;
+	font-size:15px;
+	cursor:pointer;
+	
+}
+
+
+
+
+/*donate-button-footer*/
+
+.donate-button {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  border: 2px solid transparent; /* transparent border */
+  padding: 10px 34px;
+  font-size: 20px;
+  font-weight: 500;
+  background: #4682B4;
+  position: relative;
+  cursor: pointer;
+  margin: 10px auto 30px auto;
+  transition: 0.3s; /*  transition for smooth effect */
+}
+
+.donate-button:hover {
+  border: 2px solid  #ADD8E6;/*  border color on hover */
+  background: #ADD8E6;
+}
+
+
+.copyrights{
+	background:#181818;
+	width:100%;
+	padding:20px 0;
+	text-align:center;
+}
+
+.copyrights p{
+	font-size:14px;
+	word-spacing: 2px;
+	text-transform:capitalize;
+	color:	#C0C0C0;
+}
+
+.copyrights span{
+	text-transform:uppercase;
+	opacity: .4;
+	font-weight:200;
+}
+
+
+
+/*responsive-footer*/
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+}
+}

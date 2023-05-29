@@ -1,0 +1,3045 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.abc {
+	background-color: rgba(0, 0, 0, 0.7); /* Set the background color with 70% opacity */
+}
+
+
+.header-home {
+    height:755px; /* Set the height of the header */
+    width: 100%; /* Set the width of the header to 100% */
+    background-position: center; /* Center the background image */
+   
+    background-size: cover; /* Scale the background image to cover the entire element */
+    position: relative;  /* Set the position of the element as relative */
+}
+
+.header-home video {
+  position: absolute; /* Position the video absolutely within the header */
+  top: 0; /* Align the video to the top of the header */
+  left: 0; /* Align the video to the left of the header */
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Scale the video to cover the entire element */
+  opacity:1; /* Set the initial opacity of the video to fully visible */
+  
+  z-index: 0; /* Set a lower z-index for the video */
+}
+.header-home nav{
+    display: flex; /* Display the navigation as a flex container */
+    padding:2%; /* Add padding to the navigation */
+    justify-content:space-between; /* Distribute items evenly along the horizontal axis */
+    align-items:center; /* Align items vertically in the center */
+}
+
+.header-home nav img{
+    
+    width: 50px;
+	position: relative; /* Add position relative to adjust stacking order */
+    z-index: 2; /* Set a higher z-index to bring the logo to the front */
+
+}
+
+
+.nav-links-home{
+    flex:1; /* Distribute remaining space within the flex container */
+    text-align:right;
+	/*background-color: rgba(0, 0, 0, 0.7); bg color*/
+	 z-index: 100;/* Set a higher z-index for the element */
+	
+
+}
+
+.nav-links-home ul li{
+    list-style : none; /* Remove the bullet points from the list items */
+    display: inline-block; /* Display the list items horizontally */
+    padding: 8px 12px;
+    position :relative; /* Set the position of the list items */
+
+}
+
+    .nav-links-home ul li a 
+    {
+        /*  nav link colors and font*/
+        font-size: 14px;
+        color: #ffffff; /* font color */
+	 
+        /*to remove the line under the nav links*/
+        text-decoration: none; /* Remove the underline from the links */
+		
+    }
+
+    .nav-links-home ul li::after 
+    {
+        /*the line underneath the nav links*/
+        content: ''; /* Add content to the pseudo-element */
+        width: 0%;
+        height: 2px; /* Set the height of the line */
+        background: #ADD8E6;
+        margin: auto;  /* Center the line horizontally */
+        display: block; /* Display the line as a block element */
+        transition: 0.5s; /* Add transition effect to the line */
+    }
+ .nav-links-home ul li:hover::after{
+     /*hover effect under the nav links*/
+     width:100%; /* Expand the width of the line to 100% on hover */
+ }
+.sub-menu-home {
+    display: none; /* Hide the sub-menu by default */
+    position: absolute; /* Set the position of the sub-menu */
+    top: 100%; /* Position the sub-menu below its parent */
+    left: 0; /* Position the sub-menu at the left edge */
+}
+
+.sub-menu-home {
+    display: none; /*To hide the sub menu*/
+}
+
+.nav-links-home ul li:hover .sub-menu-home {
+    display: block; /* Show the sub-menu on hover */
+    position: absolute; /* Position the sub-menu */
+    margin-left: -15px;
+}
+     
+
+        
+
+.text-box-home {
+    width: 70%;
+	padding: 40px; 
+    color: #ffffff; /* font color */
+	background-color: rgba(0, 0, 0, 0.8); /* Set the background color with 80% opacity */
+    position: absolute; /* Set the position of the text box */
+    top: 78%; /* Position the text box from the top */
+    left: 50%; /* Position the text box from the left */
+    transform: translate(-50%,-50%); /*--to be in  the center of the div class--*/
+    text-align: center;
+	border-radius:30px; /* Add border radius to the text box to curve the edges*/
+}
+.text-box-home h1 
+{
+        font-size: 45px;
+        color:lightgray; 
+}
+    .text-box-home p {
+        margin: 10px 0 40px;
+        font-size: 13px;
+        color: #D3D3D3;
+        
+    }
+
+@media only screen and (max-width: 1200px) {
+
+    .text-box-home {
+        width: 80%; /* Adjust the width of the text box for smaller screens */
+        top: 52%; /* Adjust the positioning of the text box for smaller screens */
+        margin-bottom: 0px
+    }
+
+        .text-box-home h1 {
+            font-size: 17px;
+           
+        }
+
+        .text-box-home p {
+            margin: 10px 0 40px;
+            font-size: 10px;
+            
+        }
+
+
+}
+
+
+/*nav-responsive*/
+
+#menu-bar {
+    display: none; /* Hide the menu bar by default */
+}
+
+
+.header-home label {
+    font-size: 20px;
+    color: white; 
+    cursor: pointer; /* Set the cursor to a pointer */
+    display: none; /* Hide the label by default */
+	z-index:5; /* Set a higher z-index for the label */
+}
+
+.nav-links-home ul li ul {
+    position: absolute; /* Set the position of the sub-menu */
+    left: -20px; /* Adjust the horizontal positioning of the sub-menu */
+    right: 0; /* Adjust the horizontal positioning of the sub-menu */
+    top: 40px; /* Adjust the vertical positioning of the sub-menu */
+    width: 200px;
+    display: none; /* Hide the sub-menu by default */
+}
+
+.nav-links-home ul li:hover > ul {
+    display: initial; /* Show the sub-menu on hover */
+}
+
+
+@media only screen and (max-width: 1200px) {
+
+    .header-home {
+    }
+
+        .header-home label {
+            display: initial; /* Show the label on smaller screens */
+        }
+
+    .nav-links-home {
+        position: absolute; /* Set the position of the navigation links */
+        top: 10%;
+        left: 0;
+        right: 0;
+        background-color:#040720;
+        display: none; /* Hide the navigation links by default */
+    }
+
+        .nav-links-home ul li {
+			text-align:center;
+            width: 100%;
+            left: 0; /* Set the left position of the list item */
+        }
+
+            .nav-links-home ul li ul li {
+                backdrop-filter: blur(4px); /* Apply a backdrop filter with blur effect to the list item */
+            }
+
+
+    #menu-bar:checked ~ .nav-links-home {
+        display: initial; /* Show the navigation links when the menu bar is checked */
+    }
+
+    .header-home .nav-links-home ul li ul {
+        position: relative;
+        width: 100%;
+        margin-bottom: 2%;
+    }
+
+    .nav-links-home ul li ul {
+        position: absolute;
+        left: 0px;
+        right: 0;
+        top: 0;
+        width: 200px;
+        display: none; /* Hide the sub-menu by default */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*other page headers*/
+
+
+
+.header {
+    min-height: 100vh; /* Set the minimum height of the header to 100% of the viewport height */
+    width: 100%;
+    background-position: center;
+   
+    background-size: cover;
+    position: relative;  
+}
+
+
+nav{
+    display: flex; /* Display the navigation as a flex container */
+    padding:2%; 
+    justify-content:space-between; /* Align the navigation items with space between them */
+    align-items:center; /* Center the navigation items vertically */
+}
+
+nav img{
+    /*logo*/
+    width: 50px;
+
+}
+
+.nav-links{
+    flex:1; /* Allow the navigation links to take up remaining space within the flex container */
+    text-align:right;
+
+}
+
+.nav-links ul li{
+    list-style : none; /* Remove the bullet points from the list items */
+    display: inline-block; /* Display the list items horizontally */
+    padding: 8px 12px;
+    position :relative; /* Set the position of the list items */
+}
+
+    .nav-links ul li a 
+    {
+        /*  nav link colors and font*/
+        font-size: 14px;
+        color: #D3D3D3;
+        /*to remove the line under the nav links*/
+        text-decoration: none; 
+    }
+
+    .nav-links ul li::after 
+    {
+        /*the line underneath the nav links*/
+        content: ''; /* Add content to the pseudo-element */
+        width: 0%;
+        height: 2px;
+        background: #ADD8E6;
+        margin: auto; /* Center the line horizontally */
+        display: block; /* Display the line as a block element */
+        transition: 0.5s; /* Add a transition effect to the line */
+    }
+ .nav-links ul li:hover::after{
+     /*hover effect under the nav links*/
+     width:100%;
+ }
+
+
+
+/*nav-responsive*/
+
+#menu-bar{
+	display:none; /* Hide the menu bar by default */
+}
+.nav-links ul li ul{
+	  
+	position: absolute; /* Set the position of the sub-menu */
+	left:-20px;
+	right:0;
+	top: 40px;
+	width: 200px;
+	display:none; /* Hide the sub-menu by default */
+	
+}
+
+.nav-links ul li:hover > ul{
+display: initial; /* Show the sub-menu when hovering over the list item */
+}
+  
+@media only screen and (max-width: 1200px)
+{
+	.nav-links{
+	position:absolute; /* Set the position of the navigation links */
+	top:15%; left:0; right:0;
+	background-color:#040720;
+	display:none; /* Hide the navigation links by default */
+	
+	}
+	
+	.nav-links ul li{
+	width:100%;
+	left:0;
+	text-align:center;
+	
+    }
+	
+	
+	
+	#menu-bar:checked ~ .nav-links{
+		display:initial; /* Show the navigation links when the menu bar is checked */
+	}
+	.sub-header-ben .nav-links ul li ul{
+	position:relative; /* Set the position of the sub-menu relative to its parent */
+	width:100%;
+	margin-bottom:2%;
+}
+.nav-links ul li ul{
+	  
+	position: absolute;
+	left:0px;
+	right:0;
+	top: 0;
+	width: 200px;
+	display:none; /* Hide the sub-menu by default */
+	
+} 
+}
+
+
+/*--------intro-background-color------*/
+
+.intro-background-color {
+	background-color:white;
+	padding-bottom:40px;
+}
+
+
+
+
+/*population*/
+.population{
+    width:60%;
+    margin:auto;
+    text-align:center;
+    padding-top:80px;
+	
+
+}
+
+hr {
+    border-top: 0.5px solid grey; /* Set the style of the horizontal rule */
+    
+}
+
+.hr-text {
+    font-size: 25px;
+    position: relative; /* Set the position of the text */
+    top: -0.7em; /* Adjust the vertical positioning of the text */
+    padding: 0 10px;
+    background-color: white;
+    color:  #191970;
+    font-weight: 600;
+    font-style: italic;
+	
+}
+.population p {
+    color: #191970;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 22px; /* Set the line height of the paragraph */
+    padding: 10px; 
+	
+  
+}
+
+
+
+@media only screen and (max-width: 1200px){
+	.population {
+		width:80%;
+	}
+}
+
+
+/*main image - home page*/
+
+
+.home-main-image{
+	justify-content:center; /* Align the content in the center horizontally */
+	margin:80px auto 25px auto;
+	align-items:center; /* Align the items in the center vertically */
+	text-align:center; /* Align the text in the center */
+	
+}
+
+.home-main-image img {
+  max-width: 70%;
+  height: auto; /* Maintain the aspect ratio of the image */
+}
+
+/*--ul - lists---*/
+
+.lists {
+  display: flex; /* Display the lists as a flex container */
+  flex-direction: column; /* Arrange the lists in a column */
+  align-items: center;
+  width: 70%;
+  margin: 0 auto;  /* Center the lists container horizontally */
+  background-color: #f8f8f8;
+  padding: 20px;
+  
+}
+
+.lists hr {
+  width: 100%;
+  border: none;
+  border-top: 2px solid #ccc;
+  margin-bottom: 20px;
+}
+
+.lists .hr-text2 {
+  font-size: 20px;
+  color: #555;
+  background-color: #fff;
+  padding: 0 10px;
+}
+
+.lists ul {
+  list-style-type: disc; /* Set the list item marker style to a filled circle */
+  padding: 0;
+  margin: 0;
+}
+
+.lists li {
+  margin-bottom: 40px;
+  display: flex; /* Display the list items as a flex container */
+  flex-direction: row; /* Arrange the list items in a row */
+  align-items: center;
+}
+
+.lists img {
+  width: 150px;
+  max-width: 100%;
+  height: auto; /* Maintain the aspect ratio of the images */
+  border-radius: 5px;
+  margin-right: 20px;
+}
+
+.lists p {
+  font-size: 16px;
+  color: #555;
+  max-width: 70%;
+}
+
+
+
+
+
+
+/*-------home-categories----------*/
+
+.home-cat {
+  display: flex; /* Set the container to display as a flex container */
+  flex-direction: column; /* Arrange the child elements in a column */
+  align-items: center; /* Center the child elements horizontally */
+  justify-content: center; /* Center the child elements vertically */
+  background-color:#ECF4FA;
+  width:70%;
+    text-align: center;
+    margin:auto;
+	color:#191970;
+
+	
+  
+}
+.home-cat p {
+	text-align:justify;
+	margin: 0 70px 20px 70px;
+}
+
+.home-cat h2{
+	margin-top: 50px; /*---Title space from top---*/
+    margin-bottom:30px;
+	font-size: 30px;
+    color: #191970;
+	font-weight:700;
+}
+
+.sea-turtle-row {
+  display: flex; /* Set the container to display as a flex container */
+  justify-content: center; /* Center the child elements horizontally */
+}
+
+.sea-turtle-list {
+  list-style-type: none; /* Remove the list item markers */
+  padding: 0;
+  margin: 0;
+  display: flex; /* Set the container to display as a flex container */
+  flex-wrap: wrap; /* Allow the child elements to wrap to the next line */
+  justify-content: center; /* Center the child elements horizontally */
+}
+
+.sea-turtle {
+  display: flex; /* Set the container to display as a flex container */
+  flex-direction: column; /* Arrange the child elements in a column */
+  align-items: center;
+  margin: 10px;
+  background-color: #grey;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /*3D*/
+  border-radius: 10px;
+  padding: 10px;
+  transform: translateZ(0);/* a translation along the z-axis , zoom*/
+  transition: transform 0.3s;/*3D zoom effect duration and effect*/
+  
+}
+
+.sea-turtle:hover {
+  transform: scale(1.05);/*animation to make the image bigger*/
+}
+
+.sea-turtle img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover; /* Ensure the image covers the entire container */
+  border-radius: 5px;
+}
+
+.sea-turtle-info h3 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color:#191970;;
+  
+}
+
+.sea-turtle-info p {
+  margin: 10px 0 0;
+  font-size: 14px;
+  color:#191970;;
+}
+
+.sea-turtle-bottom {
+  display: flex; /* Set the container to display as a flex container */
+  justify-content: center; /* Center the child elements horizontally */
+  margin-bottom:60px;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .home-cat {
+    width: 90%;
+  }
+  
+  .home-cat p {
+    margin: 0 20px 20px 20px;
+  }
+  
+  .sea-turtle-row {
+    flex-direction: column; /* Change the direction of the sea turtles to a column on smaller screens */
+    align-items: center;
+  }
+  
+  .sea-turtle {
+    margin: 10px 0;
+  }
+  
+  .sea-turtle-bottom {
+    flex-direction: column; /* Change the direction of the container to a column on smaller screens */
+    align-items: center;
+    margin-bottom: 30px;
+  }
+}
+
+
+
+/*---end----*/
+
+
+
+/*-------incredible things-------------*/
+
+
+
+.incredible-home {
+  width: 70%;
+  margin: auto;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom:50px;
+  align-items: center;
+  background-color: #ECF4FA;
+  
+  width: 70%;
+  margin: 10px auto;
+  color: #191970;
+  margin-bottom:100px;
+}
+
+.incredible-home h2 {
+  margin-top: 20px;
+  font-size: 35px;
+}
+
+.col-incredible {
+  display: flex; /* Set the container to display as a flex container */
+  border-radius: 10px;
+  margin-bottom: 5%;
+}
+
+
+.col-incredible-text {
+  width: 80%;
+  padding: 15px;
+  background-color: #ECF4FA;
+}
+
+.row-incredible {
+  display: flex; /* Set the container to display as a flex container */
+  justify-content: space-between;  /* Distribute the child elements evenly along the horizontal axis */
+  margin: 10px 30px;
+}
+
+.col-incredible {
+  flex-basis:20%; /* Set the initial size of the container */
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add a box shadow to the container */
+  border-radius: 10px;
+  transition: transform 0.3s; /* Set the transition effect for the transform */
+   overflow: hidden; /* Hide any overflow content within the container */
+ 
+}
+
+.col-incredible:hover {
+  transform: scale(1.05); /* Apply a zoom effect on hover */
+}
+
+.col-incredible img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.col-incredible-text h3 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 18px;
+  text-align:justify;
+}
+
+.col-incredible-text p {
+  margin: 10px 0 0;
+  font-size: 13px;
+  text-align:justify;
+}
+
+.col-incredible-text h2 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 18px;
+  text-align:justify;
+  
+}
+
+@media only screen and (max-width: 768px) {
+  .incredible-home {
+    width: 90%;
+    margin-bottom: 50px;
+  }
+  
+  .row-incredible {
+    flex-direction: column; /* Change the direction of the rows to a column on smaller screens */
+    margin: 10px;
+  }
+  
+  .col-incredible {
+    flex-basis: 100%; /* Set the width of the containers to 100% on smaller screens */
+  }
+  
+  .col-incredible-text {
+    width: 100%;
+  }
+}
+
+
+
+/*background-video*/
+.video-home {
+  position: relative; /* Set the position to relative for the container */
+  overflow: hidden; /* Hide any overflow content within the container */
+  padding: 100px 0 10px 0;
+  
+}
+
+.video-home .video-background {
+  position: fixed; /* Set the position to fixed for the video background */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Set the z-index to move the video background behind other elements */
+ 
+}
+
+.video-home .video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Set the object-fit property for the video */
+  opacity: 1;
+}
+
+.video-home .content-overlay {
+  position: relative;
+  z-index: 1; /* Set the z-index to bring the content overlay in front of the video background */
+}
+
+
+
+
+
+
+
+
+/*--unordered list - population count---*/
+
+.pop-data {
+  width: 40%;
+  margin: 40px auto 80px auto;
+  background-color: #ECF4FA;
+  padding: 20px;
+  
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);/*3D effect*/
+  color: #191970;
+  
+}
+
+.pop-data h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.pop-data ul {
+  list-style-type: disc;/* Set the bullet point style for the unordered list */
+  padding-left: 20px;
+  margin-left:150px;
+}
+
+.pop-data li {
+  margin-bottom: 10px;
+  font-size:14px;
+
+}
+
+@media only screen and (max-width: 1200px) {
+  .pop-data {
+    width: 60%;
+    margin: 40px auto;
+  }
+
+  .pop-data ul {
+    margin-left: 10px;
+  }
+}
+
+
+
+/*--ordered list - hatcheries home---*/
+
+.hatcheries-home {
+  width: 70%;
+  margin: 80px auto 80px auto;
+  background-color: #ECF4FA;
+  padding: 50px;
+  
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);/*3D effect*/
+  color: #191970;
+  
+}
+
+.hatcheries-home h3 {
+  font-size: 25px;
+  margin-top:10px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.hatcheries-home ol {
+  
+  padding-left: 20px;
+  margin-left:10px;
+}
+
+.hatcheries-home li {
+  margin-bottom: 10px;
+  font-size:14px;
+  text-align:justify;
+
+}
+
+@media only screen and (max-width: 768px) {
+  .hatcheries-home {
+    width: 90%;
+    margin: 50px auto;
+    padding: 30px;
+  }
+  
+  .hatcheries-home h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .hatcheries-home li {
+    font-size: 12px;
+  }
+  .hatcheries-home ol {
+  
+  padding-left: 0;
+  
+}
+}
+
+
+/*------life cycle-------*/
+
+
+.life {
+	background-color:#ECF4FA;
+}
+
+.life-cycle{
+	width:70%;
+	margin:auto auto 0 auto;
+	color: #191970;
+	align-items:center;
+	text-align: center;
+	justify-content:center;
+	padding:70px;
+	
+	
+}
+.life-cycle p{
+	text-align:justify;
+	margin-bottom:20px;
+	font-size:14px;
+}
+
+.life-images{
+	display:flex; /* Display the images in a flex layout */
+	justify-content:center;
+	align-items:center;
+	margin-top: 20px;
+}
+.life-images img {
+  width: 32%;
+  margin: 0 10px;
+}
+
+.life-cycle h1 {
+  font-size: 25px;
+  margin-top:0;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .life-cycle {
+    width: 90%;
+    padding: 30px;
+  }
+  
+  .life-cycle h1 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .life-cycle p {
+    font-size: 12px;
+  }
+  
+  .life-images img {
+    width: 100%;
+    margin: 10px 0;
+  }
+    .life-images {
+    flex-wrap: wrap; /* Allow the images to wrap to the next line on smaller screens */
+  }
+  
+  .life-images img {
+    width: 100%;
+    max-width: 300px;
+    margin: 10px;
+  }
+}
+
+
+
+
+
+/*--life-and-pop-data-----*/
+.life-and-pop-data
+{
+	background-color:#ECF4FA;
+	padding-bottom:40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*----footer-----*/
+
+
+
+
+.footer{
+	background-color: #24262b;
+    padding: 70px 0 0 0;
+	margin-top:0;
+	
+	
+}
+.container-footer{
+	max-width: 1170px; /* Maximum width for the footer container */
+	margin:auto; /* Center-align the footer container horizontally */
+	margin-bottom:25px;
+}
+.row-footer{
+	display: flex;
+	flex-wrap: wrap; /* Allow flex items to wrap to the next line when they reach the edge of the container */
+}
+.row-footer ul{
+	list-style: none; /* Remove default bullet points from the unordered list */
+}
+
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+   margin-bottom: 20px; /*  to separate each column */
+   border: 1px solid transparent; /* transparent border to prevent margin collapsing */
+}
+.footer-col h4{
+	font-size: 18px;
+	color: #ffffff;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative; /*to adjust the position of the element relative to its normal position*/
+}
+.footer-col h4::before{
+	content: ''; /* Empty content */
+	position: absolute; /*positions an element relative to its nearest positioned class*/
+	left:0;
+	bottom: -10px;
+	background-color: #1E90FF;/*color of the line under the h4*/
+	height: 2px;
+	box-sizing: border-box;
+	width: 70px; /*line under the h4*/
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block; /* Display the links as block elements */
+	transition: all 0.3s ease; /* Add transition effect for smooth hover effect */
+}
+.footer-col ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+.footer-col .social-links a{
+	display: inline-block; /* Display the social media links as inline-block elements */
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease; /* Add transition effect for smooth hover effect */
+}
+.footer-col .social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}
+
+/*email- input*/
+
+.footer-form input
+{
+	width:230px;
+	height:35px;
+	border-radius:4px;
+	text-align:center;
+	margin-top:8px;
+	margin-bottom:20px;
+	outline:none; /* Remove outline on focus */
+	border:none;
+}
+
+/*submit*/ 
+.footer-form button{
+	background:transparent;
+	border:2px solid #fff;
+	color:#fff;
+	border-radius: 30px;
+	padding:7px 30px;
+	font-size:15px;
+	cursor:pointer; /* Set cursor to pointer for the submit button */
+	
+}
+
+
+
+
+/*donate-button-footer*/
+
+.donate-button {
+  display: inline-block; /* Display the donate button as an inline-block element */
+  text-decoration: none; /* Remove underline from the donate button */
+  color: #fff;
+  border: 2px solid transparent; /* transparent border */
+  padding: 10px 34px;
+  font-size: 20px;
+  font-weight: 500;
+  background: #4682B4;
+  position: relative;
+  cursor: pointer; /* Set cursor to pointer for the donate button */
+  margin: 10px auto 30px auto;
+  transition: 0.3s; /*  transition for smooth effect */
+}
+
+.donate-button:hover {
+  border: 2px solid  #ADD8E6;/*  border color on hover */
+  background: #ADD8E6;
+}
+
+
+.copyrights{
+	background:#181818;
+	width:100%;
+	padding:20px 0;
+	text-align:center;
+}
+
+.copyrights p{
+	font-size:14px;
+	word-spacing: 2px; /* Spacing between words */
+	text-transform:capitalize; /* Capitalize the text */
+	color:	#C0C0C0;
+}
+
+.copyrights span{
+	text-transform:uppercase; /* Uppercase the text in the span */
+	opacity: .4; /* Opacity of the text in the span */
+	font-weight:200;
+}
+
+
+
+/*responsive-footer*/
+@media(max-width: 957px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*-------------New Page - Categories-------------*/
+
+.sub-header-cat {
+    height: 560px;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(images/cat.jpg); /* Set the background image for the sub-header section */
+    background-position: center; /* Set the background image position */
+    background-size: cover; /* Set the background image size */
+    text-align: center; /* Center-align the content in the sub-header section */
+    color: white;
+}
+
+    .sub-header-cat h1 {
+        margin-top: 180px; /*---Title space from top---*/
+        font-size: 45px;
+		 margin-left:10px;
+		margin-right:10px;
+        color: lightgray;
+    }
+
+
+@media only screen and (max-width: 768px) {
+  .sub-header-cat h1 {
+    margin-top: 200px;
+    font-size: 35px; 
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .sub-header-cat h1 {
+    margin-top: 150px;
+    font-size: 25px; 
+  }
+}
+
+.sub-header-cat label{
+	font-size:20px;
+	color:white;
+	cursor:pointer;
+	display:none; /* Hide the labels by default */
+}
+
+
+
+
+
+@media only screen and (max-width: 1200px)
+{
+	
+	
+	.sub-header-cat label{
+		display:initial; /* Display the labels on smaller screens */
+	}
+	 .sub-header-cat .nav-links ul li ul {
+        position: relative; /* Set the position of the nested unordered list */
+        width: 100%;
+        margin-bottom: 2%;
+    }
+	
+}
+
+
+
+    /*-----------Intro para styles-----*/
+.intro {
+    width: 60%;
+    margin: 40px auto 90px auto;
+    text-align: center;
+    padding-top: 80px;
+}
+
+
+    .intro p {
+        color:  #191970;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 22px;
+        padding: 10px;
+    }
+	
+	@media only screen and (max-width: 1200px){
+	.intro {
+		width:80%;
+	}
+}
+
+/*----------categories content---*/
+
+.grid-container-cat {
+    display: flex; /* Use flexbox for the container */
+    align-items: center;
+   
+}
+
+.category {
+    background-color: #ECF4FA;
+    padding: 20px;
+    width: 70%;
+    margin: 60px auto;
+    
+}
+    .category h2 {
+        margin: 20px 10px 10px 40px;
+        color:#191970;
+    }
+.description{
+    margin:10px auto 0 40px;
+}
+.description p {
+
+    /*margin:10px 25px 10px 70px;*/
+    text-align: justify; /* Justify-align the text in the category description */
+    font-size:15px;
+	color:#191970;
+}
+
+
+.cat-content {
+    display: grid; /* Use CSS grid for the category content */
+    grid-template-columns: 1fr 1fr; /* Set the number of columns in the grid */
+    grid-gap: 20px; /* Set the gap between grid items */
+}
+
+
+
+
+
+.cat-map {
+    display: flex; /* Use flexbox for the map section */
+    justify-content: center;
+    margin: 40px;
+    width:90%;
+}
+    .cat-map iframe {
+        width: 100%;
+        height: 450px; /* Adjust the height as desired */
+    }
+
+
+.category-but {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.cat-but {
+    display: inline-block; /* Display the button as inline block */
+    text-decoration: none; /* Remove the default text decoration */
+    color:#6b85a0;
+    border: 1px solid #6b85a0;
+    padding: 10px 34px;
+    font-size: 20px;
+    font-weight: 500;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    margin:10px auto 30px auto;
+    
+
+}
+
+    .cat-but:hover {
+        border: 1px solid #7393B3;
+        background: #7393B3;
+        transition: 0.6s;
+    }
+
+
+/*----------slide show--------------*/
+
+.cat-image {
+    width: 400px;
+    height: 300px;
+    background-color: dimgrey;
+    margin: 10px auto;
+    text-align: center;
+    overflow: hidden; /* Hide any overflowing content within the slide image */
+    position: relative; /* Set the position of the slide image */
+}
+
+.image-container-slide-cat {
+    width: 1600px; /* 4 images x 400px */
+    background-color: grey;
+    height: 300px;
+    clear: both; /* Clear any floats within the image container */
+    position: absolute;  /* Set the position of the image container */
+    left: 0;
+    top: 0;
+    -webkit-transition: left 2s; /* Apply a transition effect to the left property */
+    -moz-transition: left 2s; /* Apply a transition effect to the left property */
+    -o-transition: left 2s; /* Apply a transition effect to the left property */
+    transition: left 2s; /* Apply a transition effect to the left property */
+}
+
+.slide-cat {
+    float: left; /* Float the slides to the left */
+    /*margin: 0px;*/
+    padding: 0px;
+    position: relative;
+    width: 400px;
+    height: 300px;
+}
+
+.buttons-slide-cat {
+    position: absolute; /* Set the position of the navigation buttons */
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%); /* Move the navigation buttons to the horizontal center */
+}
+
+    .buttons-slide-cat a {
+        display: inline-block; /* Display the navigation buttons as inline blocks */
+        height: 15px;
+        width: 15px;
+        border-radius: 50px;
+        border: 3px solid darkslategrey;
+        background-color: #ECF4FA;
+        /*margin: 0 5px;*/
+        transition: background-color 0.3s ease-in-out; /*  a transition effect to the background-color property */
+    }
+
+        .buttons-slide-cat a:target {
+            background-color: darkslategrey; /* Set the background color of the active navigation button */
+        }
+
+        .buttons-slide-cat a:hover {
+            background-color: darkslategrey; /* Change the background color of the navigation buttons on hover */
+        }
+
+#slide-1-cat:target ~ .image-container-slide-cat {
+    left: 0px;
+}
+
+#slide-2-cat:target ~ .image-container-slide-cat {
+    left: -400px;
+}
+
+#slide-3-cat:target ~ .image-container-slide-cat {
+    left: -800px;
+}
+
+#slide-4-cat:target ~ .image-container-slide-cat {
+    left: -1200px;
+}
+
+
+#slide-5-cat:target ~ .image-container-slide-cat {
+    left: 0px;
+}
+
+#slide-6-cat:target ~ .image-container-slide-cat {
+    left: -400px;
+}
+
+#slide-7-cat:target ~ .image-container-slide-cat {
+    left: -800px;
+}
+
+#slide-8-cat:target ~ .image-container-slide-cat {
+    left: -1200px;
+}
+
+
+
+#slide-9-cat:target ~ .image-container-slide-cat {
+    left: 0px;
+}
+
+#slide-10-cat:target ~ .image-container-slide-cat {
+    left: -400px;
+}
+
+#slide-11-cat:target ~ .image-container-slide-cat {
+    left: -800px;
+}
+
+#slide-12-cat:target ~ .image-container-slide-cat {
+    left: -1200px;
+}
+
+
+#slide-13-cat:target ~ .image-container-slide-cat {
+    left: 0px;
+}
+
+#slide-14-cat:target ~ .image-container-slide-cat {
+    left: -400px;
+}
+
+#slide-15-cat:target ~ .image-container-slide-cat {
+    left: -800px;
+}
+
+#slide-16-cat:target ~ .image-container-slide-cat {
+    left: -1200px;
+}
+
+#slide-17-cat:target ~ .image-container-slide-cat {
+    left: 0px;
+}
+
+#slide-18-cat:target ~ .image-container-slide-cat {
+    left: -400px;
+}
+
+#slide-19-cat:target ~ .image-container-slide-cat {
+    left: -800px;
+}
+
+#slide-20-cat:target ~ .image-container-slide-cat {
+    left: -1200px;
+}
+
+
+
+
+
+
+
+/*----additional------*/
+
+
+.additional-cat {
+    margin: 30px 40px 50px 40px;
+    text-align: justify;
+    font-size: 15px;
+	color:#191970;
+	
+}
+
+    .additional-cat p {
+        /*margin:10px 25px 10px 70px;*/
+		
+        
+    }
+    .additional-cat h3 {
+        margin: 40px 0 20px 0;
+        color: #191970;
+    }
+
+
+
+/*for description 
+.description{
+    margin:10px auto 0 40px;
+}*/
+
+@media only screen and (max-width: 1150px) {
+	
+  .grid-container-cat {
+    flex-direction: column; /* Change the flex direction to stack items vertically */
+  }
+
+  .category {
+    width: 90%;
+    margin: 40px auto;
+  }
+
+  .cat-content {
+    grid-template-columns: 1fr; /* Change the grid template columns to stack items vertically */
+  }
+
+  
+  .description{
+    margin:10px 20px 0 20px;
+}
+
+ 
+  
+
+  
+  .cat-map iframe {
+    height: 300px;
+	
+  }
+  .cat-map {
+	  margin:10px;
+  }
+
+  .category-but {
+    margin-top: 20px;
+  }
+  .buttons-slide-cat a {
+  display: inline-block; /* Display the buttons as inline-block elements */
+  height: 15px;
+  width: 15px;
+  border-radius: 50px;
+  border: 3px solid darkslategrey;
+  background-color: #ECF4FA;
+  margin: 0 5px;
+  transition: background-color 0.3s ease-in-out; /* Add a smooth transition effect on background-color change */
+  pointer-events: auto; /* Allow pointer events on the buttons */
+}
+
+    .cat-image {
+        width: 230px;
+        height: 150px;
+    }
+
+    .image-container-slide-cat {
+        width: 920px; /* 4 images x 230px */
+        height: 150px;
+    }
+
+    .slide-cat {
+        width: 230px;
+        height: 150px;
+    }
+
+    #slide-1-cat:target ~ .image-container-slide-cat {
+        left: 0px;
+    }
+
+    #slide-2-cat:target ~ .image-container-slide-cat {
+        left: -230px;
+    }
+
+    #slide-3-cat:target ~ .image-container-slide-cat {
+        left: -460px;
+    }
+
+    #slide-4-cat:target ~ .image-container-slide-cat {
+        left: -690px;
+    }
+
+
+    #slide-5-cat:target ~ .image-container-slide-cat {
+        left: 0px;
+    }
+
+    #slide-6-cat:target ~ .image-container-slide-cat {
+        left: -230px;
+    }
+
+    #slide-7-cat:target ~ .image-container-slide-cat {
+        left: -460px;
+    }
+
+    #slide-8-cat:target ~ .image-container-slide-cat {
+        left: -690px;
+    }
+
+
+
+    #slide-9-cat:target ~ .image-container-slide-cat {
+        left: 0px;
+    }
+
+    #slide-10-cat:target ~ .image-container-slide-cat {
+        left: -230px;
+    }
+
+    #slide-11-cat:target ~ .image-container-slide-cat {
+        left: -460px;
+    }
+
+    #slide-12-cat:target ~ .image-container-slide-cat {
+        left: -690px;
+    }
+
+
+    #slide-13-cat:target ~ .image-container-slide-cat {
+        left: 0px;
+    }
+
+    #slide-14-cat:target ~ .image-container-slide-cat {
+        left: -230px;
+    }
+
+    #slide-15-cat:target ~ .image-container-slide-cat {
+        left: -460px;
+    }
+
+    #slide-16-cat:target ~ .image-container-slide-cat {
+        left: -690px;
+    }
+
+    #slide-17-cat:target ~ .image-container-slide-cat {
+        left: 0px;
+    }
+
+    #slide-18-cat:target ~ .image-container-slide-cat {
+        left: -230px;
+    }
+
+    #slide-19-cat:target ~ .image-container-slide-cat {
+        left: -460px;
+    }
+
+    #slide-20-cat:target ~ .image-container-slide-cat {
+        left: -690px;
+    }
+
+.additional-cat{
+	margin:10px;;
+}
+
+}
+
+
+
+
+
+/*fixed background*/
+
+.grid-container-cat {
+	background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.2)),url(images/cat.jpg);
+	background-attachment:fixed;  /* Fix the background image to prevent scrolling */
+	background-size:cover; /* Scale the background image to cover the container */
+	
+}
+
+
+
+
+
+/*----categories-table------*/
+
+.cat-tab h2 {
+        margin: 80px 10px 10px 40px;
+        color:#191970;
+		text-align:center;
+    }
+
+.cat-table {
+  width: 70%;
+  margin: 40px auto;
+  border-collapse: separate; /* Separate the borders of the table cells */
+  border-spacing: 0;  /* Set the spacing between table cells to 0 */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);/* Add a box shadow to create a 3D effect */
+}
+
+.cat-table th,
+.cat-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+  box-shadow: inset 0 -1px 0 #fff; /*3D effect*/
+}
+
+.cat-table th {
+  background-color: #f2f2f2;
+}
+
+.cat-table tbody tr:nth-child(even) {
+  background-color: #eaf2fe;
+}
+
+/*table footer*/
+.cat-table tfoot td {
+  text-align: right;
+  font-style: italic;
+  color: #777;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+}
+
+/*images in the table*/
+.cat-table img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover; /* Scale and crop the images to cover the specified dimensions */
+  border-radius: 50%;
+}
+
+/*@media only screen and (max-width: 768px) {
+  .cat-table {
+    width: 100%;
+  }
+
+  .cat-table th,
+  .cat-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .cat-table img {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cat-table tbody tr {
+    margin-bottom: 10px;
+  }
+ 
+  .cat-table th {
+
+      text-align:center;
+   }
+
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*-------------New Page - Hikkaduwa Turtle Hatchery-------------*/
+    .sub-header-hik {
+        height: 560px;
+        width: 100%;
+        background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(images/turtle1.jpg);
+        background-position: center; /* Set the background position to center */
+        background-size: cover; /* Set the background size to cover the entire container */
+        text-align: center;
+        color: white;
+    }
+
+    .sub-header-hik h1 {
+        margin-top: 180px; /*---Title space from top---*/
+        margin-left:10px;
+		margin-right:10px;
+		font-size: 45px;
+        color: lightgray;
+    }
+	
+	
+	
+	
+@media only screen and (max-width: 768px) {
+  .sub-header-hik h1 {
+    margin-top: 200px; /* Adjust the title space from top for smaller screens */
+    font-size: 35px; /* Adjust the font size for smaller screens */
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .sub-header-hik h1 {
+    margin-top: 150px; /* Adjust the title space from top for even smaller screens */
+    font-size: 25px; /* Adjust the font size for even smaller screens */
+  }
+}
+
+
+.sub-header-hik label{
+	font-size:20px;
+	color:white;
+	cursor:pointer;
+	display:none;
+}
+
+
+
+
+
+@media only screen and (max-width: 1200px)
+{
+	
+	
+	.sub-header-hik label{
+		display:initial; /* Display the label for screens up to 1200px */
+	}
+	 .sub-header-hik .nav-links ul li ul {
+        position: relative; /* a new positioning context for an element without removing it from the normal flow of the document*/
+        width: 100%;
+        margin-bottom: 2%;
+    }
+	
+}
+
+
+
+
+
+
+  
+   /**------------------Slideshow------------*/
+.slider {
+  width: 700px;
+  height: 450px;
+  background-color: dimgrey;
+  margin: -40px auto 10px auto;/*-49 overlaps*/
+  text-align: center;
+  overflow: hidden; /* Hide any content that exceeds the container size */
+  position: relative; /* Set the position of the slideshow container */
+  transform-style: preserve-3d; /* Enables 3D transformations */
+  perspective: 1000px; /* Sets the perspective for 3D transforms */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); /*  box shadow for a 3D effect */
+ 
+}
+
+
+
+.image-container-slide {
+    width: 5600px; /* 8 images x 700px */
+    background-color: grey;
+    height: 450px;
+    clear: both; /* Clear any floated elements */
+    position: absolute;
+    left: 0;
+    top: 0;
+    -webkit-transition: left 2s; /* Add a transition effect for smooth left movement */
+    -moz-transition: left 2s; /* Add a transition effect for smooth left movement */
+    -o-transition: left 2s; /* Add a transition effect for smooth left movement */
+    transition: left 2s; /* Add a transition effect for smooth left movement */
+}
+
+.slide {
+    float: left;
+    margin: 0px;
+    padding: 0px;
+    position: relative; /* Set the position of each slide */
+    width: 700px;
+    height: 450px;
+}
+
+.buttons-slide {
+    position: absolute; /* Set the position of the navigation buttons */
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%); /* Center align the navigation buttons horizontally */
+}
+
+    .buttons-slide a {
+        display: inline-block; /* Display the navigation buttons as inline-block elements */
+        height: 15px;
+        width: 15px;
+        border-radius: 50px;
+        border: 2px solid darkslategrey;
+        background-color: #ECF4FA;
+        margin: 0 5px;
+        transition: background-color 0.3s ease-in-out; /* transition  */
+    }
+
+        .buttons-slide a:target {
+            background-color: darkslategrey;
+        }
+        .buttons-slide a:hover {
+            background-color: darkslategrey; /* Change background color on hover */
+        }
+
+#slide-1:target ~ .image-container-slide {
+    left: 0px;
+}
+
+#slide-2:target ~ .image-container-slide {
+    left: -700px;
+}
+
+#slide-3:target ~ .image-container-slide {
+    left: -1400px;
+}
+
+#slide-4:target ~ .image-container-slide {
+    left: -2100px;
+}
+
+#slide-5:target ~ .image-container-slide {
+    left: -2800px;
+}
+
+#slide-6:target ~ .image-container-slide {
+    left: -3500px;
+}
+
+#slide-7:target ~ .image-container-slide {
+    left: -4200px;
+}
+
+#slide-8:target ~ .image-container-slide {
+    left: -4900px;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+
+    .slider {
+        width: 300px;
+        height: 200px;
+    }
+
+    .image-container-slide {
+        width: 2400px; /* 8 images x 300px */
+        height: 200px;
+    }
+
+    .slide {
+        width: 300px;
+        height: 200px;
+    }
+
+    #slide-1:target ~ .image-container-slide {
+        left: 0px;
+    }
+
+    #slide-2:target ~ .image-container-slide {
+        left: -300px;
+    }
+
+    #slide-3:target ~ .image-container-slide {
+        left: -600px;
+    }
+
+    #slide-4:target ~ .image-container-slide {
+        left: -900px;
+    }
+
+    #slide-5:target ~ .image-container-slide {
+        left: -1200px;
+    }
+
+    #slide-6:target ~ .image-container-slide {
+        left: -1500px;
+    }
+
+    #slide-7:target ~ .image-container-slide {
+        left: -1800px;
+    }
+
+    #slide-8:target ~ .image-container-slide {
+        left: -2100px;
+    }
+
+}
+
+
+
+
+
+
+
+/*--------------------------centerrrr
+    .container{
+     display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    margin:40px 20px 0 20px;
+    }
+    .container .box {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+       
+    }
+
+
+*/
+/*Images grid*/
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 40px 20px 0 20px;
+}
+
+    .container .box {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+    }
+
+    .container .box .dream {
+        display: flex;
+        flex-direction: column;
+        width:32.5%;
+        align-items: center;
+    }
+    .container .box .dream img{
+        width:100%;
+        padding-bottom:15px;
+        border-radius:2%;
+    }
+
+    /*--Things to do in hikkaduwa--*/
+.todo-hikk {
+  width: 70%;
+ 
+  text-align: center;
+  padding-top: 100px;
+  align-items: center;
+    background-color: #ECF4FA;
+    padding: 20px;
+    width: 70%;
+    margin: 60px auto;
+	
+}
+
+
+.hikk-col {
+  flex-basis: 31%;/*elements will take 31% of the horizontal space*/
+  border-radius: 10px;
+  margin-bottom: 5%;
+  text-align: left;
+}
+
+.hikk-col img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.row-hikk {
+  display: flex;/* create a flex container*/
+  justify-content: space-between;
+  
+}
+
+.hikk-col {
+  flex-basis: 30%;/*elements will take 31% of the horizontal space*/
+  margin: 10px;
+  background-color: #ECF4FA;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /*3d effect*/
+  border-radius: 10px;
+  padding: 15px;
+  transition: transform 0.3s;/*effect time*/
+  max-width: 300px;
+}
+
+.hikk-col:hover {
+  transform: scale(1.05);/*zoom effect*/
+}
+
+.hikk-col img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.hikk-col h3 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 18px;
+  color: #191970;
+}
+
+.hikk-col p {
+  margin: 10px 0 0;
+  font-size: 14px;
+  color:#191970;
+}
+
+.todo-hikk h2 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 30px;
+  color: #191970;
+}
+
+.todo-hikk p{
+	color: #191970;
+}
+
+@media (max-width: 767px) {
+  .row-hikk {
+    flex-direction: column;
+  }
+  
+  .hikk-col {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+  .hikk-col h3{
+	  margin-bottom:20px;
+  }
+  .todo-hikk {
+	  width:90%;
+  }
+  .todo-hikk h2{
+	  font-size:20px;
+  }
+}
+
+
+
+/*map*/
+
+
+.map-hikk {
+    width: 100%;
+    height:100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+}
+.map-hikk iframe{
+    width:70%;
+    height:500px;
+    
+}
+@media (max-width: 767px) {
+  .map-hikk iframe {
+    width: 90%;
+    height: 500px;
+	
+	margin-top:0;
+	margin-bottom:0;
+  }
+}
+
+
+/*--usefule tips---*/
+
+.useful-tips {
+  width: 40%;
+  margin: 100px auto 60px auto;
+  background-color: #ECF4FA;
+  padding: 20px;
+  
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);/*3D effect*/
+}
+
+.useful-tips h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.useful-tips ul {
+  list-style-type: disc;/*bullet point list*/
+  padding-left: 20px;
+}
+
+.useful-tips li {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 767px) {
+  .useful-tips {
+    width: 80%;
+    margin: 60px auto;
+  }
+}
+
+
+
+
+
+/*fixed background*/
+
+.hikkaduwa-fixed-background {
+	background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.2)),url(images/turtle1.jpg);
+	background-attachment:fixed; /*fixed background*/
+	background-size:cover; /* Set the background size to cover the entire container */
+	padding-bottom:40px;
+	
+}
+.slider-padding {
+	padding-bottom:90px;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*-------------New Page - Threats-------------*/
+
+.sub-header-thr {
+    height: 560px;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(images/threats3.jpg);
+    background-position: center; /* Set the background position to center */
+    background-size: cover; /* Set the background size to cover the entire container */
+    text-align: center;
+    color: white;
+}
+
+    .sub-header-thr h1 {
+        margin-top: 180px; /*---Title space from top---*/
+		margin-left:10px;
+		margin-bottom:10px;
+        font-size: 45px;
+        color: lightgray;
+    }
+
+
+@media only screen and (max-width: 768px) {
+  .sub-header-thr h1 {
+    margin-top: 200px; 
+    font-size: 35px; 
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .sub-header-thr h1 {
+    margin-top: 150px; 
+    font-size: 25px; 
+  }
+}
+
+
+.sub-header-thr label{
+	font-size:20px;
+	color:white;
+	cursor:pointer;
+	display:none; /*hide label*/
+}
+
+
+
+
+
+@media only screen and (max-width: 1200px)
+{
+	
+	
+	.sub-header-thr label{
+		display:initial;  /* Display the label for screens up to 1200px */
+	}
+	 .sub-header-thr .nav-links ul li ul {
+        position: relative;
+        width: 100%;
+        margin-bottom: 2%;
+    }
+	
+}
+
+
+
+
+/*
+.threat-back-fixed {
+ 
+    width: 100%;
+    height: 100vh;
+    background-image: url('images/ben.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}*/
+
+
+/*--Threat content--*/
+.threat {
+    background-color: #ECF4FA;
+    display: flex; /* sets the flexible length*/
+    justify-content: space-between;
+    padding: 40px; /*Space inside the margin*/
+    width: 90%;
+    margin: 40px auto; /*Top-bottom and right-left*/
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+   
+}
+.threat img {
+    margin: auto;
+    height: 25%;
+    width:35%;
+
+}
+
+    .threat h2 {
+        margin: 20px 0;
+        color:#191970;
+    }
+
+.text-threat{
+    color:#191970;
+    font-size:15px;
+}
+.threat h3 {
+    color: #6b85a0;
+    line-height:1.5;
+}
+.threat p{
+    margin-right:15px;
+    text-align:justify;
+}
+.threat-but {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 30px auto auto auto;
+	
+}
+
+.threat-button{
+    display:inline-block; /* Display the button as an inline-block element */
+    text-decoration:none; /* Remove the default text decoration */
+    color:#6b85a0;
+    border: 1px solid #6b85a0;
+    padding: 10px 34px;
+    font-size:24px;
+    font-weight:500;
+    background:transparent;
+    position:relative; /* Set the position of the button */
+    cursor:pointer;
+}
+
+    .threat-button:hover {
+        border: 1px solid #7393B3;
+        background: #7393B3;
+        transition:0.6s; /* A transition effect with a duration of 0.6 seconds */
+
+    }
+
+
+
+@media only screen and (max-width: 768px) {
+  .threat {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .threat img {
+    width: 70%;
+    height: auto;
+    margin-top: 40px;
+  }
+
+  .text-threat {
+    text-align: center;
+  }
+
+  .threat-but {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+
+
+
+
+
+/*other hatcheries buttons*/
+.kos-ben-button-threat
+{
+	background-color:#ECF4FA;
+	
+	padding-top:80px;
+	padding-bottom:60px;
+	
+	
+}
+
+.kos-ben-button-threat h3{
+	
+	color:#191970;
+    font-size:25px;
+	text-align:center;
+	margin-bottom:20px;
+	
+}
+
+.kos-ben-but-main {
+	display: flex; /* Display the container as a flex container */
+  flex-wrap: wrap;  /* Allow flex items to wrap to a new line */
+  
+  margin:0 350px 30px 350px;
+}
+
+
+.kos-ben-but {
+	flex:1; /* Allow flex items to grow and shrink */
+	justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 30px auto auto auto;
+	
+}
+
+.kos-ben-button {
+	text-decoration:none; /* Remove the default text decoration */
+    color:#6b85a0;
+    border: 1px solid #6b85a0;
+    padding: 10px 34px;
+    font-size:24px;
+    font-weight:500;
+    background:transparent;
+	position:relative; /* Set the position of the button */
+	flex-direction: row; /* Set the direction of flex items */
+}
+
+.kos-ben-button:hover {
+        border: 1px solid #7393B3;
+        background: #7393B3;
+        transition:0.6s; /* Add a transition effect with a duration of 0.6 seconds */	
+}
+
+
+@media only screen and (max-width: 1305px) {
+  .kos-ben-but-main {
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+  .kos-ben-but {
+    margin: 30px auto;
+  }
+}
+
+
+
+
+/*fixed background*/
+
+.threat-fixed-background {
+	background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.2)),url(images/threats3.jpg);
+	background-attachment:fixed; /* Fix the background position */
+	background-size:cover; /* Scale the background image to cover the container */
+	
+}
+
+.threat-back-fixed
+{
+	padding-top:50px;
+	padding-bottom:50px;
+}
+
+
+
+
+
+
+
+
+
+
+/*-------------New Page - Purchase-------------*/
+
+.sub-header-pur {
+    height: 560px;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(images/pur.jpg);
+    background-position: center;
+    background-size: cover; /* Set the background size to cover the entire container */
+    text-align: center;
+    color: white;
+}
+
+    .sub-header-pur h1 {
+        margin-top: 180px; /*---Title space from top---*/
+        font-size: 45px;
+		margin-left:10px;
+		margin-bottom:10px;
+        color: lightgray;
+    }
+	
+	
+@media only screen and (max-width: 768px) {
+  .sub-header-pur h1 {
+    margin-top: 200px; 
+    font-size: 35px; 
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .sub-header-pur h1 {
+    margin-top: 150px; 
+    font-size: 25px; 
+  }
+}
+
+
+.sub-header-pur label{
+	font-size:20px;
+	color:white;
+	cursor:pointer;
+	display:none;/*hide label*/
+}
+
+
+
+
+
+@media only screen and (max-width: 1200px)
+{
+	
+	
+	.sub-header-pur label{
+		display:initial; /* Display the label for screens up to 1200px */
+	}
+	 .sub-header-pur .nav-links ul li ul {
+        position: relative;
+        width: 100%;
+        margin-bottom: 2%;
+    }
+	
+}
+
+
+
+	
+
+/*donation types*/
+
+.donation-types  h1 {
+    font-size: 35px;
+    color:#191970;
+    text-align:center;
+    margin-top:100px;
+}
+.donation-types p {
+    text-align: center;
+}
+
+.donation-types-1 {
+    margin: 70px auto 0 auto;
+    width: 70%;
+    background-image: linear-gradient(rgba(4,9,30,0.5),rgba(4,9,30,0.7)),url(images/premium.jpg);
+    background-size: cover; /* Set the background size to cover the entire container */
+    border-radius: 10px;
+    text-align: center;
+    padding: 60px 0;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.donation-types-2 {
+    margin: 50px auto 0 auto;
+    width: 70%;
+    background-image: linear-gradient(rgba(4,9,30,0.5),rgba(4,9,30,0.7)),url(images/gold.jpg);
+    background-size: cover; /* Set the background size to cover the entire container */
+    border-radius: 10px;
+    text-align: center;
+    padding: 60px 0;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.donation-types-3 {
+    margin: 50px auto 0 auto;
+    width: 70%;
+    background-image: linear-gradient(rgba(4,9,30,0.5),rgba(4,9,30,0.7)),url(images/silver.jpg);
+    background-size: cover; /* Set the background size to cover the entire container */
+    border-radius: 10px;
+    text-align: center;
+    padding: 60px 0;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.donation-types-4 {
+    margin: 50px auto 0 auto;
+    width: 70%;
+    background-image: linear-gradient(rgba(4,9,30,0.5),rgba(4,9,30,0.7)),url(images/bronze.jpg);
+    background-size: cover; /* Set the background size to cover the entire container */
+    border-radius: 10px;
+    text-align: center;
+    padding: 60px 0;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.donation-types h2 {
+    color:white;
+    margin-bottom: 10px;
+    padding: 0;
+    font-size:30px;
+}
+
+/*-----------------------------button--------------------------------------------------------*/
+.don-button{
+    display:inline-block; /* Display the navigation buttons as inline-block elements */
+    text-decoration:none;
+    color:white;
+    border: 1px solid white;
+    padding: 10px 34px;
+    font-size:24px;
+    font-weight:500;
+    background:transparent;
+    position:relative; /* Set the position of the button */
+    cursor:pointer;
+}
+
+    .don-button:hover {
+        border: 1px solid #7393B3;
+        background: #7393B3;
+        transition:0.6s;
+
+    }
+
+.container-merch {
+    max-width: 1080px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+    .container-merch h2 {
+        margin: 120px auto 50px auto;
+        font-size: 25px;
+        line-height: 60px;
+        text-align: center; /*create more space between lines of text*/
+        position: relative; /* Set the position of the heading */
+        color:#191970;
+    }
+
+.row-merch {
+    display: flex; /*lay a collection of items out in one direction*/
+    align-items: center;
+    flex-wrap: wrap;/* Allow flex items to wrap to a new line */
+    justify-content: space-around; /*distributes the space between items evenly*/
+}
+
+
+
+.col-4{
+flex-basis:25%;/*since 4 items in one column*/
+padding:10px;
+min-width:200px;
+margin-bottom:50px;
+transition:transform 0.5s; /*to move the image - hover effect*/
+}
+
+.col-4 img{
+    width:100%;
+}
+.col-4 p{
+    color:grey;
+    font-size:14px;
+}
+    .col-4 h4 {
+        
+        color: #555;
+        font-weight:normal;
+    }
+
+    /*color of the star icons*/
+
+    .rating .fa{
+        color:#ff523b; /* Set the color of the star icons */
+    }
+.rating .far {
+    color: #ff523b; /* Set the color of the star icons */
+}
+.rating .fas {
+    color: #ff523b; /* Set the color of the star icons */
+}
+
+.col-4:hover{
+    transform:translateY(-5px);  /* Move the column 5px along the Y axis on hover */
+}
+
+
+
+
+
+
+
+
+
+/*--------New pages---About Us----------------*/
+
+.sub-header-about {
+    height: 560px;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(images/gold.jpg);
+    background-position: center;
+    background-size: cover; /* Scale the background image to cover the entire container */
+    text-align: center;
+    color: white;
+}
+
+    .sub-header-about h1 {
+        margin-top: 180px; /*---Title space from top---*/
+        font-size: 45px;
+		margin-left:10px;
+		margin-right:10px;
+        color: lightgray;
+    }
+
+@media only screen and (max-width: 768px) {
+  .sub-header-about h1 {
+    margin-top: 200px; 
+    font-size: 35px; 
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .sub-header-about h1 {
+    margin-top: 150px; 
+    font-size: 25px; 
+  }
+}
+
+
+
+
+.sub-header-about label{
+	font-size:20px;
+	color:white;
+	cursor:pointer;
+	display:none;
+}
+
+
+
+
+
+@media only screen and (max-width: 1200px)
+{
+	
+	
+	.sub-header-about label{
+		display:initial;
+	}
+	 .sub-header-about .nav-links ul li ul {
+        position: relative;
+        width: 100%;
+        margin-bottom: 2%;
+    }
+	
+}
+
+
+
+/*about us intro*/
+.about-us-intro-main {
+  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(images/premium.jpg);
+  background-position: center;
+  background-size: cover; /* Scale the background image to cover the entire container */
+  height: 560px;
+  display: flex; /* Set the display to flex */
+  justify-content: center;
+  align-items: center;
+}
+
+.about-us-intro {
+  width: 70%;
+  text-align: center;
+}
+
+
+/*--about us mission vission-*/
+.row-about {
+  display: flex; /* Set the display to flex */
+  justify-content: space-between; /* Distribute the space between items evenly */
+}
+.about-col {
+  flex-basis: 30%; /* Set the flex basis to create 3 items in one row */
+  margin: 10px;
+  background-color: transparent;
+  padding: 20px;
+  border: 2px solid transparent;
+  border-radius: 10px;
+}
+
+.about-col:hover {
+  border-color: #ffffff; 
+}
+
+.about-col h3 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.about-col p {
+  margin: 10px 0 0;
+  font-size: 14px;
+  color: #ffffff;
+  text-align: justify;
+  transition: opacity 0.3s; /*  transition for opacity */
+}
+
+.about-col:hover p {
+  opacity: 0.8; /* opacity on hover */
+}
+
+.about-us-intro h2 {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 40px;
+  color: #ffffff;
+}
+
+.about-col img {
+  max-width: 50px;
+  margin-bottom: 10px; 
+  background-color: transparent;
+}
+
+
+@media (max-width: 768px) {
+  .about-us-intro-main {
+    height: auto;
+  }
+  
+  .about-us-intro {
+    width: 90%;
+  }
+  
+  .row-about {
+    flex-direction: column;
+  }
+  
+  .about-col {
+    flex-basis: auto;
+    margin: 10px 0;
+  }
+}
+
+
+
+/*form*/
+
+#volunteer { /*since it's id*/
+  display: flex;
+  justify-content: center;
+  margin:100px auto 100px auto;
+  
+  
+}
+
+.volunteer-form {
+  max-width: 600px;
+  width: 100%;
+  padding: 25px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /*3D*/
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap; /*adjust into several lines*/
+  margin-bottom: 15px;
+  
+}
+
+.input-volunteer {
+  flex: 0 0 50%; /* flex-grow, flex-shrink, and flex-basis values , 50% means the flex item will take 50% of the available space*/
+  margin-bottom: 10px;
+  padding:0 10px 0 10px;
+}
+
+.label-volunteer {
+  display: block; /*it will ignore any horizontal space next to it and push subsequent elements to a new line*/
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.input-volunteer input {
+  height: 40px;
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+.volunteer-but {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 30px auto auto auto;
+}
+
+.volunteer-but input[type="submit"]
+{
+  height: 40px;
+  width: 120px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /*creates a gradual acceleration at the beginning, a smooth transition in the middle, and a gradual deceleration at the end*/
+  background-color: #71b7e6;
+}
+
+
+
+.volunteer-but input[type="reset"] {
+  height: 40px;
+  width: 120px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /*creates a gradual acceleration at the beginning, a smooth transition in the middle, and a gradual deceleration at the end*/
+  background-color: #71b7e6;
+}
+
+.volunteer-but input[type="submit"]:hover{
+	background-color: #9b59b6;
+}
+.volunteer-but input[type="reset"]:hover {
+  background-color: #9b59b6;
+}
+
+
+.gender-options {
+	padding-left:10px;
+}
+
+.gender-options-sub {
+	display: inline; /*to show the gender options in one line*/
+	padding-right:15px;
+}
+.gender-label{
+	padding-left:12px;
+}
+.form-title{
+	padding-left:10px;
+	padding-bottom:10px;
+	
+}
+
+
+
+
+
+
+
+
+
+
+/*--------Submit----------------*/
+
+.sub-header-submit {
+    height: 755px;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(images/gold.jpg);
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: white;
+}
+
+    .sub-header-submit h1 {
+        margin-top: 180px; /*---Title space from top---*/
+        font-size: 45px;
+		margin-left:10px;
+		margin-right:10px;
+        color: lightgray;
+    }
+
+@media only screen and (max-width: 768px) {
+  .sub-header-submit h1 {
+    margin-top: 200px; 
+    font-size: 35px; 
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .sub-header-submit h1 {
+    margin-top: 150px; 
+    font-size: 25px; 
+  }
+}
+
+
+
+.sub-header-submit label{
+	font-size:20px;
+	color:white;
+	cursor:pointer;
+	display:none;
+}
+
+
+
+
+
+@media only screen and (max-width: 1200px)
+{
+	
+	
+	.sub-header-submit label{
+		display:initial;
+	}
+	 .sub-header-submit .nav-links ul li ul {
+        position: relative;
+        width: 100%;
+        margin-bottom: 2%;
+    }
+	
+}
