@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <!--to mke the website responsive-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!--google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+	
+		<!--icons-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	
+	<script src="https://unpkg.com/alpinejs" defer></script>
+	<script src="ticket.js"></script>
+	<script src="details.js"></script>
+
+	<style>
+		
+
+
+
+.confirm-message {
+	background-color:rgb(75, 160, 69);
+	
+  color: #fff; /* Text color in white for better contrast */
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.confirm-message p{
+	font-size: 15px;
+	font-weight: 200;
+	text-align: justify;
+}
+
+
+
+
+	</style>
+
+<script>
+    // Use window.onload instead of Object.onload
+    window.onload = alert1;
+
+    function alert1() {
+      alert("Your Ticket Reservation has been Confirmed ");
+    }
+  </script>
+
+
+</head>
+<body>
+	
+	
+
+	<section class="fixed-background-ticketbooking">
+
+	
+
+    <!--header-->
+    <section class="sub-header-tick">
+        <nav>
+            <a class="logo-link" href="index.html">
+            <img class="logo" src="images/logo.jpg" />
+        </a>
+        <input type="checkbox" id="menu-bar">
+        <label for="menu-bar">MENU</label>
+
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    
+
+
+                </ul>
+
+            </div>
+        </nav>
+
+        <h1>Confirmation</h1>
+    </section>
+
+
+	<br><br>
+<div class="confirm-main">
+	<div class="confirm-message">
+<h3>Thank You for you payment. Your Order has been confirmed.</h3>
+<p>
+	We are thrilled to extend our warmest appreciation for choosing to join us at the Turtle Hatchery Experience and we are eagerly looking forward to your presence. You can show this confirmation at the entrance. Following is the summary of your order.</p>
+</div>
+<div x-data="tickets">
+		
+		
+		<div class="table-container-p">
+	<br><br>
+	<div class="summary-table-p">
+	<table>
+	  <thead>
+		<tr>
+			
+			<th>
+				Name
+			</th>
+			<th>
+				<div x-text="localStorage.getItem('fullName')"></div>
+			</th>
+		</tr>
+
+	
+		<tr>
+		  <th>Date</th>
+		 
+		  <th><div x-text="localStorage.getItem('date')"></div></th>
+		</tr>
+		<tr>
+		  <th>Time</th>
+		 
+		  <th>
+	
+		<template x-for="timeIndex in JSON.parse(localStorage.getItem('selectedTimeSlots'))">
+		  <div x-text="timeSlots[timeIndex].title"></div>
+	     </template>
+	  </th>
+		</tr>
+		<tr>
+		  <th>Duration</th>
+		  
+		 <th><div x-text="localStorage.getItem('duration') + ' hour/s'"></div></th>
+		</tr>
+
+		<tr>
+			
+			<th>
+				Mobile
+			</th>
+			<th>
+				<div x-text="localStorage.getItem('phone')"></div>
+			</th>
+		</tr>
+		<tr>
+			
+			<th>
+				Email
+			</th>
+			<th>
+				<div x-text="localStorage.getItem('confirmEmail')"></div>
+			</th>
+		</tr>
+		<tr>
+			
+			<th>
+				Gender
+			</th>
+			<th>
+				<div x-text="localStorage.getItem('gender')"></div>
+			</th>
+		</tr>
+
+		<tr>
+			
+			<th>
+				Location
+			</th>
+			<th>
+				Hikkaduwa Turtle Hatchery
+			</th>
+		</tr>
+	  </thead>
+	
+	
+	  <tbody>
+		<tr class="ticketsRow">
+		  <th>Tickets</th>
+		  <th>Charges</th>
+		</tr>
+	
+		<template x-for="(guestType, index) in JSON.parse(localStorage.getItem('guestTypes'))" :key="index">
+		  <tr>
+			  <td>
+				<span x-text="guestType.name"></span>
+				<span x-text="guestType.count"></span>
+			  </td>    
+			  <td>
+				<span x-text=" '$'+guestType.total"></span>
+			  </td>
+		  </tr>
+		</template>
+	  </tbody>
+	
+	
+	
+	  <tfoot>
+		<tr>
+		  <td>
+			Total Payable
+		  </td>
+		  
+		  <td><span x-text="'$'+localStorage.getItem('totalPrice')"></span></td>
+		</tr>
+	  </tfoot>
+	</table>
+	</div>
+	
+		</div>
+		</div>
+</div>
+
+
+
+</section>
+   <!--footer-->
+	
+
+  <footer class="footer">
+  	 <div class="container-footer">
+  	 	<div class="row-footer">
+  	 		<div class="footer-col">
+  	 			<h4>QUICK LINKS</h4>
+  	 			<ul>
+  	 				<li><a href="about.html">About Us</a></li>
+  	 				<li><a href="index.html">Home</a></li>
+  	 				<li><a href="Categories.html">Categories</a></li>
+  	 				<li><a href="purchase.html#container-merch-main">Purchase</a></li>
+					<li><a href="threats.html">Threats</a></li>
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+  	 			<h4>HATCHERIES</h4>
+  	 			<ul>
+  	 				<li><a href="Hikkaduwa.html">Hikkaduwa</a></li>
+  	 				<li><a href="Kosgoda.html">Kosgoda</a></li>
+  	 				<li><a href="Bentota.html">Bentota</a></li>
+  	 				
+  	 			</ul>
+				<br>
+				 <div class="donate-but">
+                <a href="purchase.html#donation-types-main" class="donate-button" ">DONATE</a>
+				</div>
+  	 		</div>
+			
+  	 		<div class="footer-col">
+  	 			<h4>NEWSLETTER</h4>
+  	 			
+				<div class="footer-form-main">
+					<form class="footer-form">
+					<input type="email" placeholder="Your Email Address" required>
+					<br>
+					<button type="submit">SUBSCRIBE</button>
+					</form>
+				</div>
+				
+  	 		</div>
+			
+  	 		<div class="footer-col">
+  	 			<h4>follow us</h4>
+  	 			<div class="social-links">
+  	 				<a href="https://web.facebook.com/?_rdc=1&_rdr" target="_blank"><i class="fa-brands fa-facebook"></i>
+  	 				<a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i>
+  	 				<a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i>
+  	 				<a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+
+  	 			</div>
+  	 		</div>
+  	 	</div>
+	 </div>
+		<div class="copyrights">
+		<p>copyright &copy;2023 designed by <span>Amaanah Hisham</span></p>
+		</div>
+  	 
+	
+	 
+	 
+  </footer>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

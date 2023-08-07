@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <!--handle characters from various languages and special symbols, allowing for multilingual support and better compatibility across different devices and browsers-->
+    <meta charset="UTF-8">
+
+    <!--to mke the website responsive-->
+    
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Buy Tickets</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!--google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+
+    <!--Icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.min.css">
+	
+		<!--icons-footer -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	
+    <script src="https://unpkg.com/alpinejs" defer></script>
+    
+    
+    <!--date display-->
+
+
+    
+    <script src="ticket.js"></script>
+    
+    
+
+
+</head>
+
+
+<body>
+
+    <!--header-->
+    <section class="fixed-background-ticketbooking">
+    <section class="sub-header-tick">
+        <nav>
+            <a class="logo-link" href="index.html">
+            <img class="logo" src="images/logo.jpg" />
+        </a>
+        <input type="checkbox" id="menu-bar">
+        <label for="menu-bar">MENU</label>
+
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    
+
+                </ul>
+
+            </div>
+        </nav>
+
+        <h1>Buy Tickets</h1>
+    </section>
+
+  
+<br><br>
+  <div class="main-ticket"> 
+    <div x-data="tickets" style="display: flex; justify-content: space-between;">
+      
+      <div class="ticket-details-column">
+        <div class="input-ticket">
+          <div >
+            <h4>Please Select the date</h4>
+              <!--label for="date">Date</label-->
+              <input type="date" name="date" id="date" x-model="date" x-bind:min="getCurrentDate()">
+          </div>
+
+          <div x-show="date">
+            <br>
+            <h4>Please select the time Slots</h4>
+              <!--label for="timeslot">Time Slot</label-->
+              <div>
+               
+                  <button  class="time-button" x-on:click="showTimes = !showTimes">
+                      <span x-show="!showTimes">Show Times</span>
+                      <span x-show="showTimes">Hide Times</span>
+                  </button>
+                  <ul>
+                      <template x-for="(timeSlot, index) in timeSlots" :key="index">
+                          <li x-show="showTimes || selectedTimeSlots.includes(index)"
+                              x-bind:style="timeSlot.isPeak ? 'background: #6F8FAF;' : 'background: lightblue'"
+                              x-on:click="selectTimeSlot(index)">
+                              <label :for="timeSlot.title" x-text="timeSlot.title" style="cursor: pointer;"></label>
+                          </li>
+                      </template>
+                  </ul>
+              </div>
+          </div>
+<br><br>
+          <div x-show="selectedTimeSlots.length" class="flex-row">
+            <h4>Please select guest quantity </h4>
+              <!--label for="ticketType">Ticket Type</label-->
+              <br>
+              <template x-for="(ticketType, index) in guestTypes" :key="index">
+                  <div>
+                    <div class="label-container">
+                      <label x-bind:for="ticketType.name" x-text="ticketType.name"></label>
+                    </div>
+                      <div class="plus-minus">
+                          <button type="button" class="minus-button"
+                              x-on:click="guestTypes[index].count = (guestTypes[index].count - 1 > 0 ? guestTypes[index].count - 1 : 0); cal(guestTypes[index])">-</button>
+                          <input type="number" x-model="guestTypes[index].count" />
+                          <button
+                          class="plus-button" x-on:click="guestTypes[index].count = guestTypes[index].count + 1; cal(guestTypes[index])">+</button>
+                      </div>
+                  </div>
+              </template>
+          </div>
+          </div>
+          
+
+<!--pricing table-->
+<div class="pricing-table-ticket">
+  <div class="center-table">
+    <h2>Pricing Table</h2>
+    <table>
+      <tr>
+        <th></th>
+        <th>Normal hour</th>
+        <th>Peak hour</th>
+      </tr>
+      <tr>
+        <th>Foreigner Adult</th>
+        <td>$10</td>
+        <td>$13</td>
+      </tr>
+      <tr>
+        <th>Foreigner Child</th>
+        <td>$5</td>
+        <td>$8</td>
+      </tr>
+      <tr>
+        <th>SL Adult</th>
+        <td>$4</td>
+        <td>$6</td>
+      </tr>
+      <tr>
+        <th>SL Child</th>
+        <td>$2</td>
+        <td>$3</td>
+      </tr>
+      <tr>
+        <th>Infant (Under 4 years)</th>
+        <td>Free</td>
+        <td>Free</td>
+      </tr>
+    </table>
+
+</div>
+</div>
+
+<div class="button-main-container-ticket">
+  <button type="button"  class="ticket-button" x-on:click="ContinueToDetails">Continue with Purchase</button>
+</div>
+
+          
+      </div>
+     
+      
+
+
+
+<br><br>
+<div class="summary-table-t">
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Date</th>
+       
+        <th><div x-text="date"></div></th>
+      </tr>
+      <tr>
+        <th>Time</th>
+       
+        <th><template x-for="timeIndex in selectedTimeSlots">
+          <div x-text="timeSlots[timeIndex].title"></div>
+      </template>
+    </th>
+      </tr>
+      <tr>
+        <th>Duration</th>
+        
+       <th x-text="selectedTimeSlots.length + ' hour/s'"></th>
+      </tr>
+     
+    </thead>
+
+    <tbody>
+      <tr class="ticketsRow">
+        <th>Tickets</th>
+        <th>Charges</th>
+      </tr>
+
+      <template x-for="(guestTypes, guestTypes.count) in guestTypes" :key="index">
+        <tr>
+            <td>
+              <span x-text="guestTypes.name"></span>
+              <span x-text="guestTypes.count"></span>
+            </td>    
+            <td>
+              <span x-text="'$'+guestTypes.total"></span>
+            </td>
+        </tr>
+      </template>
+    </tbody>
+
+
+
+    <tfoot>
+      <tr>
+        <td>
+          Total Payable
+        </td>
+        
+        <td><span x-text="'$'+totalPrice"></span></td>
+      </tr>
+    </tfoot>
+  </table>
+
+
+
+  </div>
+
+
+
+  </div>
+
+</div>
+
+
+
+</section>
+
+
+   <!--footer-->
+	
+
+  <footer class="footer">
+  	 <div class="container-footer">
+  	 	<div class="row-footer">
+  	 		<div class="footer-col">
+  	 			<h4>QUICK LINKS</h4>
+  	 			<ul>
+  	 				<li><a href="about.html">About Us</a></li>
+  	 				<li><a href="index.html">Home</a></li>
+  	 				<li><a href="Categories.html">Categories</a></li>
+  	 				<li><a href="purchase.html#container-merch-main">Purchase</a></li>
+					<li><a href="threats.html">Threats</a></li>
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+  	 			<h4>HATCHERIES</h4>
+  	 			<ul>
+  	 				<li><a href="Hikkaduwa.html">Hikkaduwa</a></li>
+  	 				<li><a href="Kosgoda.html">Kosgoda</a></li>
+  	 				<li><a href="Bentota.html">Bentota</a></li>
+  	 				
+  	 			</ul>
+				<br>
+				 <div class="donate-but">
+                <a href="purchase.html#donation-types-main" class="donate-button" ">DONATE</a>
+				</div>
+  	 		</div>
+			
+  	 		<div class="footer-col">
+  	 			<h4>NEWSLETTER</h4>
+  	 			
+				<div class="footer-form-main">
+					<form class="footer-form">
+					<input type="email" placeholder="Your Email Address" required>
+					<br>
+					<button type="submit">SUBSCRIBE</button>
+					</form>
+				</div>
+				
+  	 		</div>
+			
+  	 		<div class="footer-col">
+  	 			<h4>follow us</h4>
+  	 			<div class="social-links">
+  	 				<a href="https://web.facebook.com/?_rdc=1&_rdr" target="_blank"><i class="fa-brands fa-facebook"></i>
+  	 				<a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i>
+  	 				<a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i>
+  	 				<a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+
+  	 			</div>
+  	 		</div>
+  	 	</div>
+	 </div>
+		<div class="copyrights">
+		<p>copyright &copy;2023 designed by <span>Amaanah Hisham</span></p>
+		</div>
+  	 
+	  
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <!--to mke the website responsive-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!--google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+	
+		<!--icons-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	
+  <script src="details.js"></script>
+  <script src="carddetails.js"></script>
+  <script src="ticket.js"></script>
+
+
+   <!-- Alpine Plugins for input mask -->
+ <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/mask@3.x.x/dist/cdn.min.js"></script>
+ <!-- Alpine Core -->
+ <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+ <!--script src="https://unpkg.com/alpinejs"defer></script-->
+
+
+
+
+    
+
+ 
+
+
+    <style>
+        .error-message {
+  color: red;
+  font-size: 14px;
+  display: block;
+  margin-top: 5px;
+  text-align: left;
+}
+
+    </style>
+
+</head>
+<body>
+  <section class="fixed-background-ticketbooking">
+    <!--header-->
+    <section class="sub-header-tick">
+        <nav>
+            <a class="logo-link" href="index.html">
+            <img class="logo" src="images/logo.jpg" />
+        </a>
+        <input type="checkbox" id="menu-bar">
+        <label for="menu-bar">MENU</label>
+
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    
+
+
+                </ul>
+
+            </div>
+        </nav>
+
+        <h1>Payment Details</h1>
+    </section>
+
+<!--
+    <div class="ticketsPgs">
+        
+        <h2>Payment Details</h2>
+        <div x-data="payDetails()" x-init="loadPayDetails">
+
+            
+            <h3>Name on card</h3>
+            <input type="text" x-model="nameOnCard" x-on:input="savePayDetails"  required pattern="[A-Za-z\s]+" title="Invalid Input">
+            <br>
+            <h3>Card number</h3>
+            <input type="text" x-model="cardNum" x-mask="9999-9999-9999-9999" placeholder="9999-9999-9999-9999" x-on:input="savePayDetails" required>
+            <br>
+            <h3>Expiry date</h3>
+            <input type="text" x-model="ExpireDate" x-mask="99/99" placeholder="MM/YY" x-on:blur="validateAndSaveExpireDate" x-on:keydown.enter="validateAndSaveExpireDate" required>
+            <div x-show="invalidExpiryDate" class="error-message">Invalid expiry date</div>
+            <br>
+            <h3>CVC/CVV</h3>
+            <input type="text" x-model="cvc" x-mask="999" placeholder="XXX" x-on:input="savePayDetails" required>
+            <br>
+            
+       
+
+            <a href="confirmation.html" class="payment-button" >Countinue with the Payment</a>
+        
+        </div>
+    </div> 
+
+-->
+
+<div class="payment-main">
+
+<div class="ticketsPgs">
+        <br>
+    <h2>Enter Your Details</h2>
+
+    
+    <div x-data="carddetails" x-init="loadPayDetails">
+      <form x-on:submit.prevent="continueToConfirmation">
+        <br><br>
+    <div class="input-container">
+        <h3>Card number</h3>
+        <input type="text" x-model="cardNum" x-mask="9999-9999-9999-9999" placeholder="9999-9999-9999-9999" x-on:input="savePayDetails" required>
+        <br>
+    </div>
+
+        <div class="input-container">
+        <h3>Expiry date</h3>
+        <input type="text" x-model="ExpireDate" x-mask="99/99" placeholder="MM/YY" x-on:blur="validateAndSaveExpireDate" x-on:keydown.enter="validateAndSaveExpireDate" required>
+        <div x-show="invalidExpiryDate" class="error-message">Invalid expiry date</div>
+           
+</div>
+<div class="input-container">
+        <h3>CVC/CVV</h3>
+        <input type="text" x-model="cvc" x-mask="999" placeholder="XXX" x-on:input="savePayDetails" required>
+        <br>
+    </div>
+
+    <div class="input-container">
+        <h3>Name on card</h3>
+        <input type="text" x-model="nameOnCard" x-on:input="savePayDetails"  required pattern="[A-Za-z\s]+" title="Invalid Input" required>
+        <br>
+    </div>
+   <br>
+
+        
+        <!--a href="confirmation.html" class="payment-button" >Pay $<span x-text="localStorage.getItem('totalPrice')"></span></a-->
+        <button type="submit"  id="continueToConfirmation">Pay $<span x-text="localStorage.getItem('totalPrice')"></span></button>   
+      
+
+      </form>
+      </div>
+</div>
+
+
+
+<div x-data="tickets">
+  <div>
+  
+
+<br><br>
+<div class="summary-table">
+<table border="1">
+<thead>
+  <tr>
+    <th>Date</th>
+   
+    <th><div x-text="localStorage.getItem('date')"></div></th>
+  </tr>
+  <tr>
+    <th>Time</th>
+   
+    <th>
+      <template x-for="timeIndex in JSON.parse(localStorage.getItem('selectedTimeSlots'))">
+        <div x-text="timeSlots[timeIndex].title"></div>
+       </template>
+</th>
+  </tr>
+  <tr>
+    <th>Duration</th>
+    
+   <th><div x-text="localStorage.getItem('duration') + ' hour/s'"></div></th>
+  </tr>
+ 
+</thead>
+
+<tbody>
+  <tr class="ticketsRow">
+    <th>Tickets</th>
+    <th>Charges</th>
+  </tr>
+
+  <template x-for="(guestType, index) in JSON.parse(localStorage.getItem('guestTypes'))" :key="index">
+    <tr>
+        <td>
+          <span x-text="guestType.name"></span>
+          <span x-text="guestType.count"></span>
+        </td>    
+        <td>
+          <span x-text="'$'+guestType.total"></span>
+        </td>
+    </tr>
+  </template>
+</tbody>
+
+
+
+<tfoot>
+  <tr>
+    <td>
+      Total Payable
+    </td>
+    
+    <td><span x-text="'$' +localStorage.getItem('totalPrice')"></span></td>
+  </tr>
+</tfoot>
+</table>
+</div>
+  </div>
+  </div>
+
+</div>
+
+
+  
+ 
+  
+  
+
+
+
+
+
+</section>
+
+
+
+
+   <!--footer-->
+	
+
+  <footer class="footer">
+  	 <div class="container-footer">
+  	 	<div class="row-footer">
+  	 		<div class="footer-col">
+  	 			<h4>QUICK LINKS</h4>
+  	 			<ul>
+  	 				<li><a href="about.html">About Us</a></li>
+  	 				<li><a href="index.html">Home</a></li>
+  	 				<li><a href="Categories.html">Categories</a></li>
+  	 				<li><a href="purchase.html#container-merch-main">Purchase</a></li>
+					<li><a href="threats.html">Threats</a></li>
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+  	 			<h4>HATCHERIES</h4>
+  	 			<ul>
+  	 				<li><a href="Hikkaduwa.html">Hikkaduwa</a></li>
+  	 				<li><a href="Kosgoda.html">Kosgoda</a></li>
+  	 				<li><a href="Bentota.html">Bentota</a></li>
+  	 				
+  	 			</ul>
+				<br>
+				 <div class="donate-but">
+                <a href="purchase.html#donation-types-main" class="donate-button" ">DONATE</a>
+				</div>
+  	 		</div>
+			
+  	 		<div class="footer-col">
+  	 			<h4>NEWSLETTER</h4>
+  	 			
+				<div class="footer-form-main">
+					<form class="footer-form">
+					<input type="email" placeholder="Your Email Address" required>
+					<br>
+					<button type="submit">SUBSCRIBE</button>
+					</form>
+				</div>
+				
+  	 		</div>
+			
+  	 		<div class="footer-col">
+  	 			<h4>follow us</h4>
+  	 			<div class="social-links">
+  	 				<a href="https://web.facebook.com/?_rdc=1&_rdr" target="_blank"><i class="fa-brands fa-facebook"></i>
+  	 				<a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i>
+  	 				<a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i>
+  	 				<a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+
+  	 			</div>
+  	 		</div>
+  	 	</div>
+	 </div>
+		<div class="copyrights">
+		<p>copyright &copy;2023 designed by <span>Amaanah Hisham</span></p>
+		</div>
+  	 
+	
+	 
+	 
+  </footer>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
