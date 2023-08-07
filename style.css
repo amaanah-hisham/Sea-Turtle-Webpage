@@ -188,8 +188,7 @@
 
 @media only screen and (max-width: 1200px) {
 
-    .header-home {
-    }
+   
 
         .header-home label {
             display: initial; /* Show the label on smaller screens */
@@ -554,7 +553,7 @@ hr {
   flex-direction: column; /* Arrange the child elements in a column */
   align-items: center;
   margin: 10px;
-  background-color: #grey;
+  background-color: grey;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /*3D*/
   border-radius: 10px;
   padding: 10px;
@@ -1474,11 +1473,7 @@ hr {
 	
 }
 
-    .additional-cat p {
-        /*margin:10px 25px 10px 70px;*/
-		
-        
-    }
+   
     .additional-cat h3 {
         margin: 40px 0 20px 0;
         color: #191970;
@@ -3042,4 +3037,703 @@ transition:transform 0.5s; /*to move the image - hover effect*/
         margin-bottom: 2%;
     }
 	
+}
+
+
+
+
+
+/*-------------New Page - Tickets-------------*/
+
+.sub-header-tick {
+  height: 180px;
+  width: 100%;
+  background-color: rgba(26, 31, 83, 0.7);
+  background-position: center;
+  background-size: cover; /* Set the background size to cover the entire container */
+  text-align: center;
+  color: white;
+}
+
+  .sub-header-tick h1 {
+      margin-top: -40px; /*---Title space from top---*/
+      font-size: 45px;
+  margin-left:10px;
+  margin-bottom:10px;
+      color: lightgray;
+  }
+
+  .fixed-background-ticketbooking{
+    background-image: linear-gradient(rgba(4,9,30,0.9),rgba(4,9,30,0.2)),url(images/cat.jpg);
+      background-attachment:fixed;  /* Fix the background image to prevent scrolling */
+      background-size:cover; /* Scale the background image to cover the container */
+      padding-bottom: 40px;
+    }
+    
+@media only screen and (max-width: 768px) {
+.sub-header-tick h1 {
+  margin-top: -10px; 
+  font-size: 35px; 
+}
+}
+
+@media only screen and (max-width: 480px) {
+.sub-header-tick h1 {
+  margin-top: -10px; 
+  font-size: 25px; 
+}
+}
+
+
+.sub-header-tick label{
+font-size:20px;
+color:white;
+cursor:pointer;
+display:none;/*hide label*/
+}
+
+
+
+
+
+@media only screen and (max-width: 1200px)
+{
+
+
+.sub-header-tick label{
+  display:initial; /* Display the label for screens up to 1200px */
+}
+ .sub-header-tick .nav-links ul li ul {
+      position: relative;
+      width: 100%;
+      margin-bottom: 2%;
+  }
+
+}
+
+
+
+
+
+
+/* Style for the options within the select element */
+
+
+.time-button{
+  border-radius: 10px;
+  background-color: #74a2c8;
+}
+
+.main-ticket{
+  display:flex;
+  padding:30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:auto;
+  
+}
+
+.select option {
+  padding: 5px;
+}
+
+.ticket-details-column{
+  width:400px;
+  background-color: #ECF4FA;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  margin-right:60px;
+   
+ }
+ .input-ticket{
+ 
+  padding-left:40px;
+  padding: 40px;
+ }
+ 
+ .flex-row{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;;
+  
+ }
+
+ .plus-minus{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  padding:0;
+  margin-top:0.5rem;
+ }
+
+ .label-container{
+  display:flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-right: 1rem;
+ }
+
+
+button.plus-button,
+button.minus-button{
+  display:flex;
+  float:right;
+}
+
+.plus-minus input[type="number"] {
+  width: 75px; /* Adjust the width as needed */
+  height: 40px; /* Adjust the height as needed */
+  font-size: 14px; /* Adjust the font size as needed */
+}
+
+.plus-minus button {
+  width: 30px; /* Adjust the width as needed */
+  height: 40px; /* Adjust the height as needed */
+  font-size: 16px; /* Adjust the font size as needed */
+  background-color: #74a2c8; /* Set the background color */
+  border: 1px solid #ccc; /* Add a border */
+  cursor: pointer;
+}
+.plus-minus button.plus-button {
+  border-radius: 0 4px 4px 0; /* Add rounded corners on the right side */
+}
+
+.plus-minus button.minus-button {
+  border-radius: 4px 0 0 4px; /* Add rounded corners on the left side */
+}
+
+/* Center the buttons vertically within the container */
+.plus-minus button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Add some spacing between the label and the input box */
+.label-container {
+  margin-right: 0.5rem; /* Adjust the margin as needed */
+}
+
+
+.summary-table-t{
+  background-color: #ECF4FA;
+  padding:30px;
+  border-radius: 10px;
+  height: 520px;
+}
+.summary-table-t table {
+	border-collapse: collapse;
+  width: 500px; /* You can adjust the width as per your preference */
+  border-collapse: collapse; /* Collapses the borders into single lines */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  
+}
+
+.summary-table-t th,
+.summary-table-t td {
+  border: 0.1px solid rgb(132, 136, 140); /* Add a border to th and td elements for single line effect */
+  padding: 8px; /* Add padding to improve readability */
+  padding-left: 50px;
+}
+
+.summary-table-t th {
+  background-color:#6F8FAF; /* Add a background color to the table header */
+  text-align: left;
+}
+
+.summary-table-t tfoot td {
+  background-color:  #a8bfd0; /* Add a background color to the table footer cells */
+  padding-left: 50px;
+  text-align: left;
+}
+
+.summary-table-t tbody td {
+  padding-left: 50px;
+  text-align: left;
+}
+
+/* Odd rows in one color */
+.summary-table-t tbody tr:nth-child(odd) td {
+  background-color: #ECF4FA;
+}
+
+/* Even rows in another color */
+.summary-table-t tbody tr:nth-child(even) td {
+  background-color: #e3f2fd;
+}
+
+
+
+.button-main-container-ticket{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 35px;
+
+
+  align-items: center;
+  text-align: center;
+
+}
+
+.ticket-button{
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  border: 2px solid transparent; /* transparent border */
+  padding: 10px 34px;
+  font-size: 20px;
+  font-weight: 500;
+  background: #4682B4;
+ 
+  cursor: pointer;
+  margin: 10px auto 30px auto;
+  transition: 0.3s; /*  transition for smooth effect */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+
+/*pricing table*/
+
+
+
+.pricing-table-ticket {
+  font-family: Arial, sans-serif;
+  margin: 0 auto 70px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.center-table {
+  width: 80%;
+}
+
+.pricing-table-ticket h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.pricing-table-ticket table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.pricing-table-ticket th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+  font-weight: 500;
+}
+
+/*
+
+.pricing-table-ticket tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.pricing-table-ticket tr:nth-child(odd) {
+  background-color: #e3f2fd;
+}
+*/
+
+
+.pricing-table-ticket tr:nth-child(even) {
+  background-color: #e3f2fd;
+}
+
+.pricing-table-ticket tr:nth-child(odd) {
+  background-color: #b9d6eb;
+  
+  
+}
+
+.pricing-table-ticket h2{
+  font-size: 15px;
+  text-align: left;
+}
+
+
+/*responsive*/
+
+
+
+
+
+
+/*------------details page -------------*/
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: auto;
+}
+
+input, button {
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+
+
+.details-button {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  border: 2px solid transparent; /* transparent border */
+  padding: 10px 34px;
+  font-size: 20px;
+  font-weight: 500;
+  background: #4682B4;
+  position: relative;
+  cursor: pointer;
+  margin: 10px auto 30px auto;
+  transition: 0.3s; /*  transition for smooth effect */
+}
+
+.details-main {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  
+}
+
+.customer-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-right:70px ;
+  margin-top: 58px;
+  margin-bottom:100px;
+  
+  padding: 10px;
+  width: 450px;
+  background-color: #ECF4FA;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.customer-details h3 {
+  font-size: 15px;
+  font-weight: 450;
+}
+
+.customer-details .container {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+
+.customer-details .container label{
+text-align: left;
+
+}
+/* Apply custom styles to the input boxes */
+.customer-details input,
+.customer-details select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+/* Style the error message */
+.customer-details .error {
+  color: red;
+}
+
+/* Align the labels to the left */
+.customer-details label {
+  
+  display: block;
+}
+
+/* Style the container divs for better spacing */
+.customer-details .container {
+  margin-bottom: 5px;
+}
+
+
+
+.summary-table {
+  margin: 13px auto 0  auto;
+  
+  text-align: center;
+  background-color: #ECF4FA;
+  padding:30px;
+  border-radius: 10px;
+}
+
+
+
+
+
+
+
+/*-----Payment page ---------*/
+
+
+#continueToConfirmation {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  border: 2px solid transparent; /* transparent border */
+  padding: 10px 34px;
+  font-size: 20px;
+  font-weight: 500;
+  background: #4682B4;
+  position: relative;
+  cursor: pointer;
+  margin: 10px auto 30px auto;
+  transition: 0.3s; /*  transition for smooth effect */
+}
+
+
+
+
+
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+
+
+
+.payment-main {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+ /*background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(images2/coral.jpg);*/
+}
+
+.ticketsPgs{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-right:70px ;
+  margin-top: 58px;
+  margin-bottom:100px;
+  
+  padding: 10px;
+  width: 450px;
+  background-color: #ECF4FA;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.ticketsPgs h3 {
+  font-size: 15px;
+  font-weight: 450;
+}
+
+.ticketsPgs.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Apply custom styles to the input boxes */
+.ticketsPgs input,
+.ticketsPgs select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Style the error message */
+.ticketsPgs .error {
+  color: red;
+}
+
+/* Align the labels to the left */
+.ticketsPgs label {
+  text-align: left;
+  display: block;
+}
+
+
+
+
+
+
+
+
+
+/*----------confirmation page--------------*/
+
+/*only for confirmation pg*/
+.table-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 45px; /* Top margin */
+  margin-bottom: 50px; /* Bottom margin */
+  position:absolute;
+  
+}
+
+
+
+.summary-table table {
+	border-collapse: collapse;
+  width: 500px; /* You can adjust the width as per your preference */
+  border-collapse: collapse; /* Collapses the borders into single lines */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  
+}
+
+.summary-table th,
+.summary-table td {
+  border: 0.1px solid rgb(132, 136, 140); /* Add a border to th and td elements for single line effect */
+  padding: 8px; /* Add padding to improve readability */
+  padding-left: 50px;
+}
+
+.summary-table th {
+  background-color:#6F8FAF; /* Add a background color to the table header */
+  text-align: left;
+}
+
+.summary-table tfoot td {
+  background-color:  #a8bfd0; /* Add a background color to the table footer cells */
+  padding-left: 50px;
+  text-align: left;
+}
+
+.summary-table tbody td {
+  padding-left: 50px;
+  text-align: left;
+}
+
+/* Odd rows in one color */
+.summary-table tbody tr:nth-child(odd) td {
+  background-color: #ECF4FA;
+}
+
+/* Even rows in another color */
+.summary-table tbody tr:nth-child(even) td {
+  background-color: #e3f2fd;
+}
+
+
+
+/*--confirmation---*/
+.table-container-p {
+  display: flex;
+  justify-content: center;
+  margin-top: 45px; /* Top margin */
+  margin-bottom: 50px; /* Bottom margin */
+  
+  
+  
+}
+
+.confirmation-background{
+	background-color: #F6F6F6;
+}
+.confirm-main{
+	background-color: #d0dce6;
+	width:900px;
+	padding-bottom: 1px;
+	padding-top:30px;
+	border-radius:30px ;
+	justify-content: center;
+  align-items: center;
+  margin-left:auto;
+  margin-right:auto;
+  
+  
+
+}
+
+.confirm-main h3{
+	text-align:center;
+}
+
+.summary-table-p table {
+	border-collapse: collapse;
+  width: 845px; /* You can adjust the width as per your preference */
+  border-collapse: collapse; /* Collapses the borders into single lines */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  
+}
+
+.summary-table-p th,
+.summary-table-p td {
+  border: 0.1px solid rgb(132, 136, 140); /* Add a border to th and td elements for single line effect */
+  padding: 8px; /* Add padding to improve readability */
+  padding-left: 50px;
+}
+
+.summary-table-p th {
+  background-color:#6082B6; /* Add a background color to the table header */
+  text-align: left;
+}
+
+.summary-table-p tfoot td {
+  background-color:  #a8bfd0; /* Add a background color to the table footer cells */
+  padding-left: 50px;
+  text-align: left;
+}
+
+.summary-table-p tbody td {
+  padding-left: 50px;
+  text-align: left;
+}
+
+/* Odd rows in one color */
+.summary-table-p tbody tr:nth-child(odd) td {
+  background-color: #ECF4FA;
+}
+
+/* Even rows in another color */
+.summary-table-p tbody tr:nth-child(even) td {
+  background-color: #e3f2fd;
+}
+
+@media only screen and (max-width: 1100px) {
+  
+
+  /* Styles for summary-table on smaller screens */
+  .summary-table {
+    max-width: 100%;
+  }
+
+  
+  /* Styles for the confirmation section on smaller screens */
+  .confirm-main {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .summary-table-p table {
+    width: 100%;
+  }
+
+  .table-container-p {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .confirm-message h3 {
+    font-size: 20px;
+  }
 }
