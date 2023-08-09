@@ -60,6 +60,22 @@
         </nav>
 
         <h1>Details</h1>
+
+
+        <div class="ticket-nav">
+
+          <ul>
+            
+            <li class="under" ><a href="Tickets.html">Tickets</a></li>
+            
+            <li>></li>
+            <li class="active-page">Details</li>
+            <li>></li>
+            <li>Payment</li>
+            <li>Confirmation</li> 
+        </ul>
+      
+        </div>
     </section>
 
    
@@ -84,7 +100,7 @@
 
         <div class="container">
             <label for="confirm-email">Confirm Email</label>
-            <input type="email" id="confirm-email" x-model="confirmEmail" x-on:input.debounce="validateEmail" x-mask="'email'" required>
+            <input type="email" id="confirm-email" x-model="confirmEmail" x-on:input="validateEmail" x-mask="'email'" required>
             <span x-show="emailError" class="error">Email does not match</span>
         </div>
 

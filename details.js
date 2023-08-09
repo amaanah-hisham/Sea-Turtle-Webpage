@@ -130,8 +130,13 @@ document.addEventListener('alpine:init', () => {
     },
 
     continueToPayment(){
-
-        window.location.href = 'payment.html';
+        if(!this.fullName|| !this.email || this.emailError || !this.phone){
+            return;
+        }
+        else{
+            window.location.href = 'payment.html';
+        }
+        
     },
 
 }));

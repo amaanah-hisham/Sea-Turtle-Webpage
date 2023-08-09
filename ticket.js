@@ -21,7 +21,6 @@ document.addEventListener('alpine:init', () => {
               name: 'Foreign Adult',
               peak: 13,
               offPeak: 10,
-              duration: 0,
               count: 0,
               total: 0
           },

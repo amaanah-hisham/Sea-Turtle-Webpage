@@ -3046,9 +3046,9 @@ transition:transform 0.5s; /*to move the image - hover effect*/
 /*-------------New Page - Tickets-------------*/
 
 .sub-header-tick {
-  height: 180px;
+  height: 210px;
   width: 100%;
-  background-color: rgba(26, 31, 83, 0.7);
+  background-color: rgba(12, 14, 31, 0.7);
   background-position: center;
   background-size: cover; /* Set the background size to cover the entire container */
   text-align: center;
@@ -3056,10 +3056,10 @@ transition:transform 0.5s; /*to move the image - hover effect*/
 }
 
   .sub-header-tick h1 {
-      margin-top: -40px; /*---Title space from top---*/
+      margin-top: -80px; /*---Title space from top---*/
       font-size: 45px;
   margin-left:10px;
-  margin-bottom:10px;
+  margin-bottom:20px;
       color: lightgray;
   }
 
@@ -3111,7 +3111,54 @@ display:none;/*hide label*/
 
 }
 
+.active-page{
+  color: rgb(145, 148, 246);
+  text-shadow: 2px 2px 4px rgba(111, 112, 170, 0.5);
+  
+}
 
+.ticket-nav {
+  text-align: center; /* Center the content horizontally */
+}
+
+.ticket-nav ul {
+  list-style: none; /* Remove bullet points */
+  padding: 0;
+  display: inline-block; /* Display list items in one line */
+}
+
+.ticket-nav ul li {
+  display: inline-block;
+  padding: 8px 12px;
+  position: relative;
+}
+
+.ticket-nav ul li a {
+  font-size: 14px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.under::after {
+  content: '';
+  width: 0;
+  height: 2px;
+  background: #ADD8E6;
+  margin: auto;
+  display: block;
+  transition: 0.5s;
+  transform-origin: center bottom;
+  transform: scaleX(0); /* Initially hidden */
+}
+
+.under:hover::after {
+  width: 100%;
+  transform: scaleX(1); /* Expand to full width on hover */
+}
+
+
+
+   
 
 
 
@@ -3131,6 +3178,7 @@ display:none;/*hide label*/
   justify-content: center;
   align-items: center;
   height:auto;
+  flex-direction: row;
   
 }
 
@@ -3139,7 +3187,7 @@ display:none;/*hide label*/
 }
 
 .ticket-details-column{
-  width:400px;
+  max-width:400px;
   background-color: #ECF4FA;
   padding: 20px;
   border-radius: 8px;
@@ -3362,7 +3410,38 @@ button.minus-button{
 /*responsive*/
 
 
+@media (max-width: 950px) {
+  .main-ticket {
+    flex-direction: column;
+    align-items: center;
+  }
+  .input-ticket,
+  .ticket-details-column,
+  .summary-table-t{
+    max-width: 350px;
+    
+    box-sizing: border-box;
+    
+  }
+.ticket-details-column{
+  margin-left: 70px;
+}
+  .summary-table-t {
+    margin-top: 10px;
+    margin-left: 40px;
+    height: 600px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 
+  }
+  .summary-table-t table{
+    max-width:300px;
+  }
+  .responsive{
+    flex-direction: column;
+  }
+}
 
 
 
@@ -3402,6 +3481,7 @@ input, button {
   display: flex;
   justify-content: center;
   flex: 1;
+  flex-direction: row;
   
 }
 
@@ -3477,7 +3557,29 @@ text-align: left;
 
 
 
+@media (max-width: 768px) {
+  .details-main {
+    flex-direction: column;
+    align-items: center;
+  }
 
+  .customer-details,
+  .summary-table {
+    width: 320px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+.customer-details{
+  margin-left: 70px;
+}
+  .summary-table {
+    margin-top: 10px;
+
+  }
+  .summary-table table{
+    max-width:300px;
+  }
+}
 
 
 
@@ -3518,6 +3620,7 @@ text-align: left;
   display: flex;
   justify-content: center;
   flex: 1;
+  flex-direction: row;
  /*background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(images2/coral.jpg);*/
 }
 
@@ -3571,14 +3674,36 @@ text-align: left;
 }
 
 
+@media (max-width: 768px) {
+  .payment-main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ticketsPgs,
+  .summary-table {
+    width: 320px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+.ticketsPgs{
+  margin-left: 70px;
+}
+  .summary-table {
+    margin-top: 10px;
+
+  }
+  .summary-table table{
+    max-width:300px;
+  }
+}
 
 
 
 
 
 
-
-/*----------confirmation page--------------*/
+/*----------deatils and payment table page--------------*/
 
 /*only for confirmation pg*/
 .table-container {
@@ -3594,7 +3719,7 @@ text-align: left;
 
 .summary-table table {
 	border-collapse: collapse;
-  width: 500px; /* You can adjust the width as per your preference */
+  max-width: 500px; /* You can adjust the width as per your preference */
   border-collapse: collapse; /* Collapses the borders into single lines */
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   
@@ -3635,7 +3760,7 @@ text-align: left;
 
 
 
-/*--confirmation---*/
+/*--confirmation page---*/
 .table-container-p {
   display: flex;
   justify-content: center;
