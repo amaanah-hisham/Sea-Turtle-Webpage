@@ -3111,6 +3111,7 @@ display:none;/*hide label*/
 
 }
 
+
 .active-page{
   color: rgb(145, 148, 246);
   text-shadow: 2px 2px 4px rgba(111, 112, 170, 0.5);
@@ -3128,13 +3129,14 @@ display:none;/*hide label*/
 }
 
 .ticket-nav ul li {
+  font-size: 14px;
   display: inline-block;
   padding: 8px 12px;
   position: relative;
 }
 
 .ticket-nav ul li a {
-  font-size: 14px;
+  
   color: #ffffff;
   text-decoration: none;
 }
@@ -3214,7 +3216,10 @@ display:none;/*hide label*/
 
 /* Style for the options within the select element */
 
-
+.summary-table-t h4{
+  margin-top:28px;
+  text-align: center;
+}
 .time-button{
   border-radius: 10px;
   background-color: #74a2c8;
@@ -3319,7 +3324,7 @@ button.minus-button{
   background-color: #ECF4FA;
   padding:30px;
   border-radius: 10px;
-  height: 520px;
+  height: 620px;
 }
 .summary-table-t table {
 	border-collapse: collapse;
