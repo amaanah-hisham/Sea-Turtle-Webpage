@@ -93,7 +93,7 @@ document.addEventListener('alpine:init', () => {
 
       selectTimeSlot(index) {
 
-          // check if the index is already in the array
+          // to see  if the index is in the array format
           if (this.selectedTimeSlots.includes(index)) {
 
               // remove the index from the array
@@ -101,12 +101,12 @@ document.addEventListener('alpine:init', () => {
 
           } else {
 
-              // Todo - you should be able to select time slots in the past !!!
+              
 
               // get the last element of the array
               let lastElement = this.selectedTimeSlots[this.selectedTimeSlots.length - 1];
 
-              // add 1 to the last element and check if the value is equals to the index
+              // add up 1 to the last element and see if the value is equals to the index
               if (!this.selectedTimeSlots.length || index - 1 == lastElement) {
 
                   // add the index to the array
@@ -117,7 +117,7 @@ document.addEventListener('alpine:init', () => {
               }
           }
 
-          // sort the array
+          // to sort the array
           this.selectedTimeSlots = this.selectedTimeSlots.sort();
           this.duration=this.selectedTimeSlots.length;
 
