@@ -42,7 +42,8 @@
     }
     @media only screen and (max-width: 600px){
   .ticket-nav ul li{
-    font-size: 10px;
+    font-size: 8px;
+    padding: 8px 7px;
   }
   /*
   .summary-table-t table{
@@ -51,6 +52,20 @@
   */
 
 }
+@media only screen and (max-width: 1200px)
+{
+    .nav-links{
+        z-index: 10;
+        width: 127%;
+    }
+    
+
+}
+
+
+
+
+
     </style>
 
 
@@ -62,21 +77,40 @@
     <!--header-->
     <section class="fixed-background-ticketbooking">
     <section class="sub-header-tick">
-        <nav>
-            <a class="logo-link" href="index.html">
-            <img class="logo" src="images/logo.jpg" />
-        </a>
-        
+      <nav>
+        <a class="logo-link" href="index.html">
+        <img class="logo" src="images/logo.jpg" />
+    </a>
+    <input type="checkbox" id="menu-bar">
+    <label for="menu-bar">MENU</label>
 
-            <div class="nav-links-ticket-main">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
+        <div class="nav-links">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Categories.html">Turtle Categories </a></li>
+                <li><a href="Hikkaduwa.html">Hikkaduwa Turtle Hatchery  </a></li>
+                <li><a href="threats.html">Threats To Turtles </a></li>
+                <li>
+                    <a>Other Turtle Hatcheries</a>
+                    
+                        <ul>
+                            <li><a href="Kosgoda.html">Kosgoda Turtle Hatchery</a></li>
+                            <li><a href="Bentota.html">Bentota Turtle Hatchery</a></li>
+                        </ul>
+
                     
 
-                </ul>
 
-            </div>
-        </nav>
+                </li>
+                <li><a href="purchase.html">Purchase & Donate</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="Tickets.html">Buy Tickets </a></li>
+
+
+            </ul>
+
+        </div>
+    </nav>
 
         <h1>Buy Tickets</h1>
 
@@ -96,6 +130,7 @@
       
         </div>
     </section>
+    
 
 
 <br><br>

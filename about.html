@@ -15,6 +15,19 @@
 		<!--icons-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	
+
+
+  <style>
+    
+    .input-volunteer input {
+  /* Existing styles... */
+  flex: 0 0 100%; /* Adjust the flex-basis value to make the input boxes wider */
+  width: 300px;
+  
+}
+
+  </style>
+
 	
 </head>
 <body>
@@ -47,6 +60,7 @@
                     </li>
                     <li><a href="purchase.html">Purchase & Donate</a></li>
 					<li><a href="about.html">About Us</a></li>
+          <li><a href="Tickets.html">Buy Tickets </a></li>
 
 
                 </ul>
@@ -122,29 +136,30 @@
     <div class="form-content">
       <form action="submit.html" method="GET">
         <div class="form-row">
+          <br>
           <div class="input-volunteer">
             <label for="first-name">First Name</label>
-            <input type="text" id="first-name" placeholder="Enter your first name" required>
+            <input type="text" id="first-name" placeholder="first name" required>
           </div>
           <div class="input-volunteer">
             <label for="Surname">Surname</label>
-            <input type="text" id="surname" placeholder="Enter your surname" required>
+            <input type="text" id="surname" placeholder="surname" required>
           </div>
           <div class="input-volunteer">
             <label for="email">Email</label>
-            <input type="text" id="email" placeholder="Enter your email" required>
+            <input type="text" id="email" placeholder="email" required>
           </div>
           <div class="input-volunteer">
             <label for="phone-number">Phone Number</label>
-            <input type="tel" id="phone-number" placeholder="Enter your mobile number" required>
+            <input type="tel" id="phone-number" placeholder="mobile" required>
           </div>
           <div class="input-volunteer">
             <label for="password">Availability</label>
-            <input type="text" id="availability" placeholder="Enter your availability" required>
+            <input type="text" id="availability" placeholder="availability" required>
           </div>
           <div class="input-volunteer">
             <label for="interests">Interests</label>
-            <input type="text" id="interests" placeholder="Enter your interests" required>
+            <input type="text" id="interests" placeholder="interests" required>
           </div>
         </div>
         <div class="form-row">
@@ -164,13 +179,7 @@
               Female
             </label>
 			</div>
-			<div class="gender-options-sub">
-            <label>
-			  
-              <input type="radio" name="gender" value="other">
-              Prefer not to say
-            </label>
-			</div>
+			
           </div>
         </div>
         <div class="form-row">
